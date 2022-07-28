@@ -1,8 +1,4 @@
-/* CSS Document */
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
-
+/*Top Drop-down menu*/
 
 #container {
 	margin: 0 auto;
@@ -14,20 +10,20 @@ p {
 
 nav {
 
-	background-color: #E64A19;
+	background-color: #0d112f;
 }
 
 nav ul {
 	padding: 0;
-  margin: 0;
+    margin: 0;
 	list-style: none;
 	position: relative;
-	}
+}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
-	}
+}
 
 nav a {
 	display:block;
@@ -75,6 +71,16 @@ nav ul ul ul li {
 li > a:after { content:  ' >'; }
 li > a:only-child:after { content: ''; }
 
+/*END Top drop-down menu*/
+
+/*Misc*/
+
 * { 
 	font-family: Consolas, monaco, monospace; 
 }
+
+body {
+    background-color: #0d1117;
+}
+
+/*END Misc*/
