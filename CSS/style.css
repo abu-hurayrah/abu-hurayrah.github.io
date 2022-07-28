@@ -10,7 +10,7 @@ p {
 
 nav {
 
-	background-color: #0d112f;
+	background-color: #0d1117;
 }
 
 nav ul {
@@ -22,7 +22,7 @@ nav ul {
 	
 nav ul li {
 	display:inline-block;
-	background-color: #E64A19;
+	background-color: #1a1e23;
 }
 
 nav a {
@@ -66,21 +66,28 @@ nav ul ul ul li {
 	left:170px;
 }
 
-	
-/* Change this in order to change the Dropdown symbol */
-li > a:after { content:  ' >'; }
-li > a:only-child:after { content: ''; }
-
 /*END Top drop-down menu*/
 
 /*Misc*/
 
 * { 
-	font-family: Consolas, monaco, monospace; 
+	font-family: Consolas, monaco, monospace;
+    font-size: 107%;
+}
+
+.text {
+    color: #C0C0C0;
 }
 
 body {
     background-color: #0d1117;
 }
 
+hr {
+  height: 2px;
+  background-color: gray;
+  border: 1px solid grey;
+}
+
 /*END Misc*/
+
