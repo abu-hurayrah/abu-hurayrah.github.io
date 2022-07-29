@@ -34,23 +34,20 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
+    background-color: #0d1117;
+    color: slategrey;
 }
 
-/* Hide Dropdowns by Default */
 nav ul ul {
     display: none;
     position: absolute;
-    top: 60px; /* the height of the main nav */
+    top: 60px;
 }
 
-/* Display Dropdowns on Hover */
 nav ul li:hover > ul {
     display: inherit;
 }
 
-/* Fisrt Tier Dropdown */
 nav ul ul li {
     width: 170px;
     float: none;
@@ -58,7 +55,6 @@ nav ul ul li {
     position: relative;
 }
 
-/* Second, Third and more Tiers	*/
 nav ul ul ul li {
     position: relative;
     top: -60px;
@@ -70,12 +66,13 @@ nav ul ul ul li {
 /*Misc*/
 
 * {
-    font-family: Consolas, monaco, monospace;
+    font-family: Consolas, monospace;
+    font-weight: bold;
     font-size: 107%;
 }
 
 .text {
-    color: #c0c5c0;
+    color: slategray;
 }
 
 .small {
@@ -96,8 +93,8 @@ body.fade {
 
 hr {
     height: 2px;
-    background-color: gray;
-    border: 1px solid grey;
+    background-color: darkslategray;
+    border: 1px solid darkslategray;
 }
 
 /*END Misc*/
@@ -107,15 +104,12 @@ hr {
 a:visited,
 a:hover,
 a:link {
-    color: gray;
-    background-color: transparent;
+    color: darkslategray;
     text-decoration: none;
 }
 
 a:active {
-    color: gray;
-    background-color: transparent;
-    text-decoration: underline;
+    color: darkslategray;
 }
 
 /*END Link*/
@@ -136,7 +130,7 @@ div.scrollmenu a {
 }
 
 div.scrollmenu a:hover {
-    background-color: #333;
+    background-color: #222;
 }
 /*END Scroll Menu*/
 
@@ -210,7 +204,7 @@ div.scrollmenu a:hover {
 table,
 th,
 td {
-    border: 3px solid white;
+    border: 3px solid gray;
     border-collapse: collapse;
 }
 
