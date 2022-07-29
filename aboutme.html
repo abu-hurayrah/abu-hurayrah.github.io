@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <title>
         Raiyaxi Ziaoi - About me
@@ -10,17 +11,25 @@
 </head>
 
 <body>
+    <script>
+        document.body.className = 'fade';
+        document.addEventListener("DOMContentLoaded", () => {
+          window.setTimeout(function() {
+            document.body.className = '';
+          }, 230);
+        });
+    </script>
     <section>
         <div class="rt-container">
             <div class="col-rt-12">
                 <div class="Scriptcontent">
-
                     <div id="container">
                         <nav>
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="updates.html">Updates</a></li>
                                 <li><a href="projects.html">Projects</a></li>
+                                <li><a href="lprojects.html">Larger Projects</a></li>
                                 <li><a href="socials.html">Socials</a></li>
                                 <li><a href="aboutme.html">About Me</a></li>
                             </ul>
@@ -32,53 +41,71 @@
             </div>
         </div>
     </section>
-
+    
     <div align="center">
-        <img src="https://i.imgur.com/lRzzpEU.png"></img>
+        <img src="https://i.imgur.com/lRzzpEU.png" width="700" height="150"></img>
     </div>
     <hr>
-    
-    <div class="text">
+
+    <div class="text fade2">
         <h2>
-            My name is Raiyaxi Ziaoi. I enjoy CS, languages and other fun things.<br/><br/> I also make stuff that I think is quite cool.
+            My name is Raiyaxi Ziaoi. I enjoy CS, languages and other fun things.<br/><br/> I also make stuff that I think is quite cool.<br/><br/>
         </h2>
     </div>
-    <br/>
-
-    <div align="left" class="text">
-        <b>
-        <h1>
-            Interests:
-        </h1>
-        <ul>
-        <li>CS:</li>
-        <ul>
-            <li>CS for Medicine</li>
-            <li>Cryptography & Cybersecurity</li>
-            <li>ML & AI</li>
-            <li>Web 🌐, Mobile 📱, Desktop 💻 & Game 🎮 Dev</li>
-            <li>Programming:</li>
-            <ul>
-                <li>Java, Python, C# ✨</li>
-                <li>Kotlin, Dart, Rust 🤔</li>
-                <li>JS / TS, C / C++, Ruby, Julia 📚</li>
-            </ul>
-        </ul>
-        <li>Languages:</li>
-        <ul>
-            <li>English, Bengali, Hindi ✨</li>
-            <li>Urdu, Arabic 🤔</li>
-            <li>Turkish, Persian, French 📚</li>
-            <li>Russian, Japanese, Chinese, Korean, Indoneasian ✏️</li>
-        </ul>
-        <li>Other:</li>
-        <ul>
-            <li>Poetry 📜, Mathematics & Science 🔬</li>
-            <li>Anime 💻, Games 🎮</li>
-        </ul>
-    </ul></b>
+    <div class="text fade5">
+        <h3>
+            I haven't been programming for long but I think I've made it quite far :).<br/>
+            Message me if you want to talk or collaborate.
+        </h3>
+        <br/>
+        <div align="center">
+            <h1>
+                Interests:
+            </h1>
+        </div>
     </div>
 
+    <div align="left" class="small">
+    <table height=400><b>
+      <tr>
+        <th class="fade5">CS</th>
+        <th class="fade10">Languages</th>
+        <th class="fade15">Other</th>
+      </tr>
+      <tr>
+        <td>
+            <ul class="fade5">
+            <li>CS for Medicine</li><br/>
+            <li>Cryptography & Cybersecurity</li><br/>
+            <li>ML & AI</li><br/>
+            <li>Web 🌐, Mobile 📱, Desktop 💻 & Game 🎮 Dev&nbsp;&nbsp;&nbsp;</li><br/>
+            <li>Programming:</li><br/>
+            <ul>
+                <li>Java, Python, C# ✨</li><br/>
+                <li>Kotlin, Dart, Rust 🤔</li><br/>
+                <li>JS / TS, C / C++, Ruby, Julia 📚</li><br/>
+            </ul>
+        </ul>
+        <td>
+        <ul class="fade10">
+            <li>English, Bengali, Hindi ✨&nbsp;&nbsp;&nbsp;</li><br/>
+            <li>Urdu, Arabic 🤔</li><br/>
+            <li>Turkish, Persian, French 📚&nbsp;&nbsp;&nbsp;</li><br/>
+            <li>Russian, Japanese, <br/><br/>Chinese, Korean,<br/><br/> Indoneasian ✏️</li><br/>
+        </ul>
+        </td>
+        <td width=30%>
+        <ul class="fade15">
+            <li>Poetry 📜</li><br/>
+            <li>Mathematics ✏️</li><br/>
+            <li>Science 🔬</li><br/>
+            <li>Anime 💻</li><br/>
+            <li>Games 🎮</li><br/>
+        </ul>  
+        </td>
+      </tr>
+    </b></table>
+    </div>
 </body>
 
 </html>
