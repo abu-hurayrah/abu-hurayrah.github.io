@@ -49,7 +49,7 @@ nav ul li:hover > ul {
 }
 
 nav ul ul li {
-	width: 220px;
+	width: 250px;
 	float: none;
 	display: list-item;
 	position: relative;
