@@ -143,13 +143,11 @@ div.scrollmenu a:hover {
 
 /*Scroll look*/
 
-/* Width */
 ::-webkit-scrollbar {
 	height: 10px;
 	width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
 	background: #0d1117;
 }
@@ -189,10 +187,6 @@ div.scrollmenu a:hover {
 
 .fade15 {
 	animation: fadeIn 15s;
-}
-
-.fade20 {
-	animation: fadeIn 20s;
 }
 
 @keyframes fadeIn {
