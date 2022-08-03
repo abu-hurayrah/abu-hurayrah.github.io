@@ -60,15 +60,15 @@
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                        STD.OUT
+                        STD.OUT // Used for output
                     </code>
                 </pre>
-                Then edit the "hello.lsmx" file and write the following code into it:
+                Then edit the "main.lsmx" file and write the following code into it:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                        _fn main() {
-                            println("Hello World!");
+                        _fn main() { // Main function
+                            println("Hello World!"); // Print "Hello World!"
                         }
                     </code>
                 </pre>
@@ -76,7 +76,7 @@
                 <br/>
                 <pre>
                     <code class="language-batch">
-                        lorc -a path/to/hello.lsmx path/to/config.vn
+                        lorc -a path/to/main.lsmx path/to/config.vn
                     </code>
                 </pre>
                 This will automatically transpile to a .java file and then<br/> compile to a .class file and be packed into a .jar file and run.<br/><br/>

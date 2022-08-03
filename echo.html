@@ -7,7 +7,7 @@
         <link href="Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>
-            LOR Docs - Project Initialisation
+            LOR Docs - Echo program
         </title>
     </head>
 
@@ -56,32 +56,36 @@
                 <a href="docs.html">// LOR Documentation</a><br/><br/>
             </h1>
             <h2 class="fade2" align="center">
-                If you have already installed LOR, then continue. <br/>If not, then make sure to follow the instuctions on the <a href="install.html">installation</a> page.
-                <br/><br/>
-                To create a project, please enter the following into your terminal:
-                <pre>
-                    <code class="language-batch">
-                        lorc -innit Project
-                    </code>
-                </pre>
-                Or if you want a default project:
-                <pre>
-                    <code class="language-batch">
-                        lorc -innit-default Project
-                    </code>
-                </pre>
-                These commands will create a project directory with the necessary files, called "Project".
-                <br/><br/>
-                Now, what do all these files mean? The ".vn" file is the config file<br/>
-                and will store the name of all of your imported libraries.<br/><br/>
-                The ".lsmx" extension means that it is a LOR source file<br/>
-                and is where most of the code will be written.<br/><br/>
-                Another feature is in the last file type, the ".ryx" file. This file type is recognised<br/>
-                as a library file and is written in Java. This means Java code can be imported without hassle.<br/><br/>
-                As LOR is transpiled into Java, imports such as "java.util.Scanner" and such can also be imported.<br/><br/>
-                All of these files work together to produce a single .jar file as an output.<br/><br/>
-                <hr>
+                As with the last tutorial, initialise a project and then write<br/> the following code into the "config.vn" file:
                 <br/>
+                <pre class="line-numbers">
+                    <code class="language-java">
+                        STD.OUT // Used for output
+                        STD.IN.STR // Used for input
+                        java.util.Scanner // Java Scanner import
+                    </code>
+                </pre>
+                Then edit the "main.lsmx" file and write the following code into it:
+                <br/>
+                <pre class="line-numbers">
+                    <code class="language-java">
+                        _fn main() { // Main function
+                            println( // Print
+                                in_str()// User input (String)
+                            );
+                        }
+                    </code>
+                </pre>
+                To run the code, open a terminal and type:
+                <br/>
+                <pre>
+                    <code class="language-batch">
+                        lorc -a path/to/main.lsmx path/to/config.vn
+                    </code>
+                </pre>
+                This will automatically transpile to a .java file and then<br/> compile to a .class file and be packed into a .jar file and run.<br/><br/>
+                Like so:<br/>
+                <img src="Resources/Hello World.png" width="50%"></img><br/><hr><br/>
             </h1>
         </div>
     </body>
