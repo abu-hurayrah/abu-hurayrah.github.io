@@ -4,9 +4,10 @@
     <head>
         <link rel="stylesheet" href="Resources/style.css">
         <link rel="icon" type="image/x-icon" href="Resources/favicon.ico">
+        <link href="Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>
-            Raiyaxi Ziaoi - LOR Docs
+            LOR Docs - Project Initialisation
         </title>
     </head>
 
@@ -19,6 +20,7 @@
             }, 230);
             });
         </script>
+        <script src="Resources/prism.js"></script>
         <br/>
         <section>
             <div class="rt-container" align="center">
@@ -51,22 +53,19 @@
         <br/><hr><br/>
         <div class="text">
             <h1 class="fade1" align="center">
-                <a href="#">// LOR Documentation</a><br/><br/>
+                <a href="docs.html">// LOR Documentation</a><br/><br/>
             </h1>
-            <h2 class="text fade2" align="center">
-                Site under construction!
+            <h2 class="fade2" align="center">
+                If you have already installed LOR, then continue. <br/>If not, then make sure to follow the instuctions on the <a href="docs.html">Documentation</a>.
                 <br/><br/>
-                <ul>
-                    <li>
-                        <a href="install.html">// Installation</a>
-                    </li><br/>
-                    <li>
-                        <a href="createproject.html">// How to create a project</a>
-                    </li><br/>
-                    <li>
-                        <a href="hello.html">// How to write "Hello World"</a>
-                    </li><br/>
-                </ul>
+                To create a project, please enter the following into your terminal:
+                <pre class="line-numbers">
+                    <code class="language-batch">
+                        lorc -innit Project
+                    </code>
+                </pre>
+                This will create a project directory with the necessary files, called "Project".
+                <br/>
             </h1>
         </div>
     </body>

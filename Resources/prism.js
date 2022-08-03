@@ -1,5 +1,5 @@
 /* PrismJS 1.28.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=clike+java&plugins=line-numbers+highlight-keywords+toolbar+download-button */
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=clike+bash+batch+java&plugins=line-numbers+highlight-keywords+toolbar+copy-to-clipboard */
 var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {},
     Prism = function(e) {
         var n = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i,
@@ -349,6 +349,245 @@ Prism.languages.clike = {
     punctuation: /[{}[\];(),.:]/
 };
 ! function(e) {
+    var t = "\\b(?:BASH|BASHOPTS|BASH_ALIASES|BASH_ARGC|BASH_ARGV|BASH_CMDS|BASH_COMPLETION_COMPAT_DIR|BASH_LINENO|BASH_REMATCH|BASH_SOURCE|BASH_VERSINFO|BASH_VERSION|COLORTERM|COLUMNS|COMP_WORDBREAKS|DBUS_SESSION_BUS_ADDRESS|DEFAULTS_PATH|DESKTOP_SESSION|DIRSTACK|DISPLAY|EUID|GDMSESSION|GDM_LANG|GNOME_KEYRING_CONTROL|GNOME_KEYRING_PID|GPG_AGENT_INFO|GROUPS|HISTCONTROL|HISTFILE|HISTFILESIZE|HISTSIZE|HOME|HOSTNAME|HOSTTYPE|IFS|INSTANCE|JOB|LANG|LANGUAGE|LC_ADDRESS|LC_ALL|LC_IDENTIFICATION|LC_MEASUREMENT|LC_MONETARY|LC_NAME|LC_NUMERIC|LC_PAPER|LC_TELEPHONE|LC_TIME|LESSCLOSE|LESSOPEN|LINES|LOGNAME|LS_COLORS|MACHTYPE|MAILCHECK|MANDATORY_PATH|NO_AT_BRIDGE|OLDPWD|OPTERR|OPTIND|ORBIT_SOCKETDIR|OSTYPE|PAPERSIZE|PATH|PIPESTATUS|PPID|PS1|PS2|PS3|PS4|PWD|RANDOM|REPLY|SECONDS|SELINUX_INIT|SESSION|SESSIONTYPE|SESSION_MANAGER|SHELL|SHELLOPTS|SHLVL|SSH_AUTH_SOCK|TERM|UID|UPSTART_EVENTS|UPSTART_INSTANCE|UPSTART_JOB|UPSTART_SESSION|USER|WINDOWID|XAUTHORITY|XDG_CONFIG_DIRS|XDG_CURRENT_DESKTOP|XDG_DATA_DIRS|XDG_GREETER_DATA_DIR|XDG_MENU_PREFIX|XDG_RUNTIME_DIR|XDG_SEAT|XDG_SEAT_PATH|XDG_SESSION_DESKTOP|XDG_SESSION_ID|XDG_SESSION_PATH|XDG_SESSION_TYPE|XDG_VTNR|XMODIFIERS)\\b",
+        n = {
+            pattern: /(^(["']?)\w+\2)[ \t]+\S.*/,
+            lookbehind: !0,
+            alias: "punctuation",
+            inside: null
+        },
+        a = {
+            bash: n,
+            environment: {
+                pattern: RegExp("\\$" + t),
+                alias: "constant"
+            },
+            variable: [{
+                pattern: /\$?\(\([\s\S]+?\)\)/,
+                greedy: !0,
+                inside: {
+                    variable: [{
+                        pattern: /(^\$\(\([\s\S]+)\)\)/,
+                        lookbehind: !0
+                    }, /^\$\(\(/],
+                    number: /\b0x[\dA-Fa-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:[Ee]-?\d+)?/,
+                    operator: /--|\+\+|\*\*=?|<<=?|>>=?|&&|\|\||[=!+\-*/%<>^&|]=?|[?~:]/,
+                    punctuation: /\(\(?|\)\)?|,|;/
+                }
+            }, {
+                pattern: /\$\((?:\([^)]+\)|[^()])+\)|`[^`]+`/,
+                greedy: !0,
+                inside: {
+                    variable: /^\$\(|^`|\)$|`$/
+                }
+            }, {
+                pattern: /\$\{[^}]+\}/,
+                greedy: !0,
+                inside: {
+                    operator: /:[-=?+]?|[!\/]|##?|%%?|\^\^?|,,?/,
+                    punctuation: /[\[\]]/,
+                    environment: {
+                        pattern: RegExp("(\\{)" + t),
+                        lookbehind: !0,
+                        alias: "constant"
+                    }
+                }
+            }, /\$(?:\w+|[#?*!@$])/],
+            entity: /\\(?:[abceEfnrtv\\"]|O?[0-7]{1,3}|U[0-9a-fA-F]{8}|u[0-9a-fA-F]{4}|x[0-9a-fA-F]{1,2})/
+        };
+    e.languages.bash = {
+        shebang: {
+            pattern: /^#!\s*\/.*/,
+            alias: "important"
+        },
+        comment: {
+            pattern: /(^|[^"{\\$])#.*/,
+            lookbehind: !0
+        },
+        "function-name": [{
+            pattern: /(\bfunction\s+)[\w-]+(?=(?:\s*\(?:\s*\))?\s*\{)/,
+            lookbehind: !0,
+            alias: "function"
+        }, {
+            pattern: /\b[\w-]+(?=\s*\(\s*\)\s*\{)/,
+            alias: "function"
+        }],
+        "for-or-select": {
+            pattern: /(\b(?:for|select)\s+)\w+(?=\s+in\s)/,
+            alias: "variable",
+            lookbehind: !0
+        },
+        "assign-left": {
+            pattern: /(^|[\s;|&]|[<>]\()\w+(?:\.\w+)*(?=\+?=)/,
+            inside: {
+                environment: {
+                    pattern: RegExp("(^|[\\s;|&]|[<>]\\()" + t),
+                    lookbehind: !0,
+                    alias: "constant"
+                }
+            },
+            alias: "variable",
+            lookbehind: !0
+        },
+        parameter: {
+            pattern: /(^|\s)-{1,2}(?:\w+:[+-]?)?\w+(?:\.\w+)*(?=[=\s]|$)/,
+            alias: "variable",
+            lookbehind: !0
+        },
+        string: [{
+            pattern: /((?:^|[^<])<<-?\s*)(\w+)\s[\s\S]*?(?:\r?\n|\r)\2/,
+            lookbehind: !0,
+            greedy: !0,
+            inside: a
+        }, {
+            pattern: /((?:^|[^<])<<-?\s*)(["'])(\w+)\2\s[\s\S]*?(?:\r?\n|\r)\3/,
+            lookbehind: !0,
+            greedy: !0,
+            inside: {
+                bash: n
+            }
+        }, {
+            pattern: /(^|[^\\](?:\\\\)*)"(?:\\[\s\S]|\$\([^)]+\)|\$(?!\()|`[^`]+`|[^"\\`$])*"/,
+            lookbehind: !0,
+            greedy: !0,
+            inside: a
+        }, {
+            pattern: /(^|[^$\\])'[^']*'/,
+            lookbehind: !0,
+            greedy: !0
+        }, {
+            pattern: /\$'(?:[^'\\]|\\[\s\S])*'/,
+            greedy: !0,
+            inside: {
+                entity: a.entity
+            }
+        }],
+        environment: {
+            pattern: RegExp("\\$?" + t),
+            alias: "constant"
+        },
+        variable: a.variable,
+        function: {
+            pattern: /(^|[\s;|&]|[<>]\()(?:add|apropos|apt|apt-cache|apt-get|aptitude|aspell|automysqlbackup|awk|basename|bash|bc|bconsole|bg|bzip2|cal|cargo|cat|cfdisk|chgrp|chkconfig|chmod|chown|chroot|cksum|clear|cmp|column|comm|composer|cp|cron|crontab|csplit|curl|cut|date|dc|dd|ddrescue|debootstrap|df|diff|diff3|dig|dir|dircolors|dirname|dirs|dmesg|docker|docker-compose|du|egrep|eject|env|ethtool|expand|expect|expr|fdformat|fdisk|fg|fgrep|file|find|fmt|fold|format|free|fsck|ftp|fuser|gawk|git|gparted|grep|groupadd|groupdel|groupmod|groups|grub-mkconfig|gzip|halt|head|hg|history|host|hostname|htop|iconv|id|ifconfig|ifdown|ifup|import|install|ip|java|jobs|join|kill|killall|less|link|ln|locate|logname|logrotate|look|lpc|lpr|lprint|lprintd|lprintq|lprm|ls|lsof|lynx|make|man|mc|mdadm|mkconfig|mkdir|mke2fs|mkfifo|mkfs|mkisofs|mknod|mkswap|mmv|more|most|mount|mtools|mtr|mutt|mv|nano|nc|netstat|nice|nl|node|nohup|notify-send|npm|nslookup|op|open|parted|passwd|paste|pathchk|ping|pkill|pnpm|podman|podman-compose|popd|pr|printcap|printenv|ps|pushd|pv|quota|quotacheck|quotactl|ram|rar|rcp|reboot|remsync|rename|renice|rev|rm|rmdir|rpm|rsync|scp|screen|sdiff|sed|sendmail|seq|service|sftp|sh|shellcheck|shuf|shutdown|sleep|slocate|sort|split|ssh|stat|strace|su|sudo|sum|suspend|swapon|sync|sysctl|tac|tail|tar|tee|time|timeout|top|touch|tr|traceroute|tsort|tty|umount|uname|unexpand|uniq|units|unrar|unshar|unzip|update-grub|uptime|useradd|userdel|usermod|users|uudecode|uuencode|v|vcpkg|vdir|vi|vim|virsh|vmstat|wait|watch|wc|wget|whereis|which|who|whoami|write|xargs|xdg-open|yarn|yes|zenity|zip|zsh|zypper)(?=$|[)\s;|&])/,
+            lookbehind: !0
+        },
+        keyword: {
+            pattern: /(^|[\s;|&]|[<>]\()(?:case|do|done|elif|else|esac|fi|for|function|if|in|select|then|until|while)(?=$|[)\s;|&])/,
+            lookbehind: !0
+        },
+        builtin: {
+            pattern: /(^|[\s;|&]|[<>]\()(?:\.|:|alias|bind|break|builtin|caller|cd|command|continue|declare|echo|enable|eval|exec|exit|export|getopts|hash|help|let|local|logout|mapfile|printf|pwd|read|readarray|readonly|return|set|shift|shopt|source|test|times|trap|type|typeset|ulimit|umask|unalias|unset)(?=$|[)\s;|&])/,
+            lookbehind: !0,
+            alias: "class-name"
+        },
+        boolean: {
+            pattern: /(^|[\s;|&]|[<>]\()(?:false|true)(?=$|[)\s;|&])/,
+            lookbehind: !0
+        },
+        "file-descriptor": {
+            pattern: /\B&\d\b/,
+            alias: "important"
+        },
+        operator: {
+            pattern: /\d?<>|>\||\+=|=[=~]?|!=?|<<[<-]?|[&\d]?>>|\d[<>]&?|[<>][&=]?|&[>&]?|\|[&|]?/,
+            inside: {
+                "file-descriptor": {
+                    pattern: /^\d/,
+                    alias: "important"
+                }
+            }
+        },
+        punctuation: /\$?\(\(?|\)\)?|\.\.|[{}[\];\\]/,
+        number: {
+            pattern: /(^|\s)(?:[1-9]\d*|0)(?:[.,]\d+)?\b/,
+            lookbehind: !0
+        }
+    }, n.inside = e.languages.bash;
+    for (var s = ["comment", "function-name", "for-or-select", "assign-left", "parameter", "string", "environment", "function", "keyword", "builtin", "boolean", "file-descriptor", "operator", "punctuation", "number"], o = a.variable[1].inside, i = 0; i < s.length; i++) o[s[i]] = e.languages.bash[s[i]];
+    e.languages.shell = e.languages.bash
+}(Prism);
+! function(e) {
+    var r = /%%?[~:\w]+%?|!\S+!/,
+        t = {
+            pattern: /\/[a-z?]+(?=[ :]|$):?|-[a-z]\b|--[a-z-]+\b/im,
+            alias: "attr-name",
+            inside: {
+                punctuation: /:/
+            }
+        },
+        n = /"(?:[\\"]"|[^"])*"(?!")/,
+        i = /(?:\b|-)\d+\b/;
+    e.languages.batch = {
+        comment: [/^::.*/m, {
+            pattern: /((?:^|[&(])[ \t]*)rem\b(?:[^^&)\r\n]|\^(?:\r\n|[\s\S]))*/im,
+            lookbehind: !0
+        }],
+        label: {
+            pattern: /^:.*/m,
+            alias: "property"
+        },
+        command: [{
+            pattern: /((?:^|[&(])[ \t]*)for(?: \/[a-z?](?:[ :](?:"[^"]*"|[^\s"/]\S*))?)* \S+ in \([^)]+\) do/im,
+            lookbehind: !0,
+            inside: {
+                keyword: /\b(?:do|in)\b|^for\b/i,
+                string: n,
+                parameter: t,
+                variable: r,
+                number: i,
+                punctuation: /[()',]/
+            }
+        }, {
+            pattern: /((?:^|[&(])[ \t]*)if(?: \/[a-z?](?:[ :](?:"[^"]*"|[^\s"/]\S*))?)* (?:not )?(?:cmdextversion \d+|defined \w+|errorlevel \d+|exist \S+|(?:"[^"]*"|(?!")(?:(?!==)\S)+)?(?:==| (?:equ|geq|gtr|leq|lss|neq) )(?:"[^"]*"|[^\s"]\S*))/im,
+            lookbehind: !0,
+            inside: {
+                keyword: /\b(?:cmdextversion|defined|errorlevel|exist|not)\b|^if\b/i,
+                string: n,
+                parameter: t,
+                variable: r,
+                number: i,
+                operator: /\^|==|\b(?:equ|geq|gtr|leq|lss|neq)\b/i
+            }
+        }, {
+            pattern: /((?:^|[&()])[ \t]*)else\b/im,
+            lookbehind: !0,
+            inside: {
+                keyword: /^else\b/i
+            }
+        }, {
+            pattern: /((?:^|[&(])[ \t]*)set(?: \/[a-z](?:[ :](?:"[^"]*"|[^\s"/]\S*))?)* (?:[^^&)\r\n]|\^(?:\r\n|[\s\S]))*/im,
+            lookbehind: !0,
+            inside: {
+                keyword: /^set\b/i,
+                string: n,
+                parameter: t,
+                variable: [r, /\w+(?=(?:[*\/%+\-&^|]|<<|>>)?=)/],
+                number: i,
+                operator: /[*\/%+\-&^|]=?|<<=?|>>=?|[!~_=]/,
+                punctuation: /[()',]/
+            }
+        }, {
+            pattern: /((?:^|[&(])[ \t]*@?)\w+\b(?:"(?:[\\"]"|[^"])*"(?!")|[^"^&)\r\n]|\^(?:\r\n|[\s\S]))*/m,
+            lookbehind: !0,
+            inside: {
+                keyword: /^\w+\b/,
+                string: n,
+                parameter: t,
+                label: {
+                    pattern: /(^\s*):\S+/m,
+                    lookbehind: !0,
+                    alias: "property"
+                },
+                variable: r,
+                number: i,
+                operator: /\^/
+            }
+        }],
+        operator: /[&@]/,
+        punctuation: /[()']/
+    }
+}(Prism);
+! function(e) {
     var n = /\b(?:abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|exports|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|module|native|new|non-sealed|null|open|opens|package|permits|private|protected|provides|public|record(?!\s*[(){}[\]<>=%~.:,;?+\-*/&|^])|requires|return|sealed|short|static|strictfp|super|switch|synchronized|this|throw|throws|to|transient|transitive|try|uses|var|void|volatile|while|with|yield)\b/,
         t = "(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*\\s*\\.\\s*)*",
         s = {
@@ -590,11 +829,73 @@ Prism.languages.clike = {
         })), Prism.hooks.add("complete", r)
     }
 }();
-"undefined" != typeof Prism && "undefined" != typeof document && document.querySelector && Prism.plugins.toolbar.registerButton("download-file", (function(t) {
-    var e = t.element.parentNode;
-    if (e && /pre/i.test(e.nodeName) && e.hasAttribute("data-src") && e.hasAttribute("data-download-link")) {
-        var n = e.getAttribute("data-src"),
-            a = document.createElement("a");
-        return a.textContent = e.getAttribute("data-download-link-label") || "Download", a.setAttribute("download", ""), a.href = n, a
+! function() {
+    function t(t) {
+        var e = document.createElement("textarea");
+        e.value = t.getText(), e.style.top = "0", e.style.left = "0", e.style.position = "fixed", document.body.appendChild(e), e.focus(), e.select();
+        try {
+            var o = document.execCommand("copy");
+            setTimeout((function() {
+                o ? t.success() : t.error()
+            }), 1)
+        } catch (e) {
+            setTimeout((function() {
+                t.error(e)
+            }), 1)
+        }
+        document.body.removeChild(e)
     }
-}));
+    "undefined" != typeof Prism && "undefined" != typeof document && (Prism.plugins.toolbar ? Prism.plugins.toolbar.registerButton("copy-to-clipboard", (function(e) {
+        var o = e.element,
+            n = function(t) {
+                var e = {
+                    copy: "Copy",
+                    "copy-error": "Press Ctrl+C to copy",
+                    "copy-success": "Copied!",
+                    "copy-timeout": 5e3
+                };
+                for (var o in e) {
+                    for (var n = "data-prismjs-" + o, c = t; c && !c.hasAttribute(n);) c = c.parentElement;
+                    c && (e[o] = c.getAttribute(n))
+                }
+                return e
+            }(o),
+            c = document.createElement("button");
+        c.className = "copy-to-clipboard-button", c.setAttribute("type", "button");
+        var r = document.createElement("span");
+        return c.appendChild(r), u("copy"),
+            function(e, o) {
+                e.addEventListener("click", (function() {
+                    ! function(e) {
+                        navigator.clipboard ? navigator.clipboard.writeText(e.getText()).then(e.success, (function() {
+                            t(e)
+                        })) : t(e)
+                    }(o)
+                }))
+            }(c, {
+                getText: function() {
+                    return o.textContent
+                },
+                success: function() {
+                    u("copy-success"), i()
+                },
+                error: function() {
+                    u("copy-error"), setTimeout((function() {
+                        ! function(t) {
+                            window.getSelection().selectAllChildren(t)
+                        }(o)
+                    }), 1), i()
+                }
+            }), c;
+
+        function i() {
+            setTimeout((function() {
+                u("copy")
+            }), n["copy-timeout"])
+        }
+
+        function u(t) {
+            r.textContent = n[t], c.setAttribute("data-copy-state", t)
+        }
+    })) : console.warn("Copy to Clipboard plugin loaded before Toolbar plugin."))
+}();

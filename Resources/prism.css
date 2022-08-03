@@ -1,9 +1,8 @@
 /* PrismJS 1.28.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=clike+java&plugins=line-numbers+highlight-keywords+toolbar+download-button */
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=clike+bash+batch+java&plugins=line-numbers+highlight-keywords+toolbar+copy-to-clipboard */
 code[class*=language-],pre[class*=language-] {
 	color: #ccc;
 	background: 0 0;
-	font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
 	font-size: 1em;
 	text-align: left;
 	white-space: pre;
@@ -107,7 +106,7 @@ pre[class*=language-].line-numbers>code {
 	left: -3.8em;
 	width: 3em;
 	letter-spacing: -1px;
-	border-right: 1px solid #999;
+	border-right: 1px solid slategrey;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -121,7 +120,7 @@ pre[class*=language-].line-numbers>code {
 
 .line-numbers-rows>span:before {
 	content: counter(linenumber);
-	color: #999;
+	color: slategrey;
 	display: block;
 	padding-right: .8em;
 	text-align: right;
