@@ -60,19 +60,21 @@
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                        STD.OUT // Used for output
-                        STD.IN.STR // Used for input
-                        java.util.Scanner // Java Scanner import
+                        STD.OUT ::: Used for output
+                        STD.IN.STR ::: Used for input
+                        java.util.Scanner ::: Java Scanner import
                     </code>
                 </pre>
                 Then edit the "main.lsmx" file and write the following code into it:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                        _fn main() { // Main function
-                            println( // Print
-                                in_str()// User input (String)
-                            );
+                        _fn main() { ::: Main function
+                            while (true) { ::: Loop
+                                println( ::: Print
+                                    in_str() ::: Input (String)
+                                );
+                            }
                         }
                     </code>
                 </pre>
@@ -83,9 +85,8 @@
                         lorc -a path/to/main.lsmx path/to/config.vn
                     </code>
                 </pre>
-                This will automatically transpile to a .java file and then<br/> compile to a .class file and be packed into a .jar file and run.<br/><br/>
-                Like so:<br/>
-                <img src="Resources/Hello World.png" width="50%"></img><br/><hr><br/>
+                Now watch as your program echoes out your input!<br/><br/>
+                <hr><br/>
             </h1>
         </div>
     </body>
