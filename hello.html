@@ -56,14 +56,14 @@
                 <a href="docs.html">// LOR Documentation</a><br/><br/>
             </h1>
             <h2 class="fade2" align="center">
-                First of all, create a project. Then write the following code into the "config.vn" file:
+                First of all, create a project using the instructions<br/>detailed on <a href="createproject.html">this page</a>. Then write the following code into the "config.vn" file:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
                         STD.OUT
                     </code>
                 </pre>
-                Then create a "hello.lsmx" file. And write the following code into it:
+                Then edit the "hello.lsmx" file and write the following code into it:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
@@ -74,9 +74,9 @@
                 </pre>
                 To run the code, open a terminal and type:
                 <br/>
-                <pre class="line-numbers">
+                <pre>
                     <code class="language-batch">
-                        lorc -a hello.lsmx config.vn
+                        lorc -a path/to/hello.lsmx path/to/config.vn
                     </code>
                 </pre>
                 This will automatically transpile to a .java file and then<br/> compile to a .class file and be packed into a .jar file and run.<br/><br/>
