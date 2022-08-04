@@ -7,7 +7,7 @@
         <link href="Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>
-            LOR Docs - Echo program
+            LOR Docs - Functions
         </title>
     </head>
 
@@ -56,36 +56,42 @@
                 <a href="docs.html">// LOR Documentation</a><br/><br/>
             </h1>
             <h2 class="fade2" align="center">
-                As with the last tutorial, initialise a project and then write<br/> the following code into the "config.vn" file:
+                Now that you know the way of things, I think I can skip the intro.<br/><br/>
+                Config:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
                         STD.OUT
-                        STD.IN.STR 
                     </code>
                 </pre>
                 Then edit the "main.lsmx" file and write the following code into it:
                 <br/>
                 <pre class="line-numbers">
-                    <code class="language-java">
+                    <code class="language-java"> 
                         _fn main() { ::: Main function
-                            while (true) { ::: Loop
-                                println( ::: Print
-                                    in_str() ::: Input (String)
-                                );
-                            }
+                            func ( ::: Nested
+                                string ( ::: Functions
+                                    "Hello World" ::: Argument
+                                )
+                            );
+                        }
+
+                        ::: Functions
+
+                        _fn String string ( String str ) { ::: Function with return type String
+                            ret str; ::: Return
+                        }
+
+                        _fn void func ( String str ) { ::: Void function
+                            println ( ::: Print
+                                str ::: Parameter
+                            );
                         }
                     </code>
                 </pre>
-                To run the code, open a terminal and type:
-                <br/>
-                <pre>
-                    <code class="language-batch">
-                        lorc -a path/to/main.lsmx path/to/config.vn
-                    </code>
-                </pre>
-                Now watch as your program echoes out your input!<br/><br/>
-                <hr><br/>
+                This isn't too impressive on its own but as the program gets more complex,<br/> 
+                these will prove to be very useful.
+                <br/><br/><hr><br/>
             </h1>
         </div>
     </body>

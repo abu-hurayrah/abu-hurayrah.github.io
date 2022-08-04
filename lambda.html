@@ -7,7 +7,7 @@
         <link href="Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>
-            LOR Docs - Echo program
+            LOR Docs - Lambdas
         </title>
     </head>
 
@@ -56,36 +56,43 @@
                 <a href="docs.html">// LOR Documentation</a><br/><br/>
             </h1>
             <h2 class="fade2" align="center">
-                As with the last tutorial, initialise a project and then write<br/> the following code into the "config.vn" file:
+                In LOR, a key feature is the ability to store functions as variables.<br/><br/>
+                Config:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
                         STD.OUT
-                        STD.IN.STR 
+                        STD.LAMBDA
+                        STD.IN.INT
                     </code>
                 </pre>
-                Then edit the "main.lsmx" file and write the following code into it:
+                Main.lsmx:
                 <br/>
                 <pre class="line-numbers">
-                    <code class="language-java">
-                        _fn main() { ::: Main function
-                            while (true) { ::: Loop
-                                println( ::: Print
-                                    in_str() ::: Input (String)
-                                );
-                            }
+                    <code class="language-java"> 
+                        _fn main() { ::: Main functions
+                            Function func = () -> { ::: Function as a variable, note the "() ->"
+                                    String str = "";
+                                    int number = in_int (
+                                        "Please enter a number: "
+                                    );
+
+                                    for (int i = 1; i <= number; i++) {
+                                        str = (i != number) ? str.concat(i + "\n") : str.concat("" + i);
+                                    }
+                                    ret str;
+                            };
+
+                            println ("\n" +
+                                func
+                                .call()
+                                .toString()
+                            );
                         }
                     </code>
                 </pre>
-                To run the code, open a terminal and type:
-                <br/>
-                <pre>
-                    <code class="language-batch">
-                        lorc -a path/to/main.lsmx path/to/config.vn
-                    </code>
-                </pre>
-                Now watch as your program echoes out your input!<br/><br/>
-                <hr><br/>
+                This program may look complicated, but try it and see;<br/>it is much simpler than the same implementation in Java.<br/> 
+                <br/><hr><br/>
             </h1>
         </div>
     </body>
