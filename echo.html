@@ -7,7 +7,7 @@
         <link href="Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>
-            LOR Docs - Echo program
+            ALNOOR Docs - Echo program
         </title>
     </head>
 
@@ -53,25 +53,25 @@
         <br/><hr><br/>
         <div class="text">
             <h1 class="fade1" align="center">
-                <a href="docs.html">// LOR Documentation</a><br/><br/>
+                <a href="docs.html">// ALNOOR Documentation</a><br/><br/>
             </h1>
             <h2 class="fade2" align="center">
                 As with the last tutorial, initialise a project and then write<br/> the following code into the "config.vn" file:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                        STD.OUT
-                        STD.IN.STR 
+                        CORE.OUT
+                        CORE.IN.STR 
                     </code>
                 </pre>
                 Then edit the "main.lsmx" file and write the following code into it:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                        _fn main() { ::: Main function
-                            while (true) { ::: Loop
-                                println( ::: Print
-                                    in_str() ::: Input (String)
+                        _fn main() { // Main function
+                            while (true) { // Loop
+                                println( // Print
+                                    in_str() // Input (String)
                                 );
                             }
                         }
@@ -81,7 +81,7 @@
                 <br/>
                 <pre>
                     <code class="language-batch">
-                        lorc -a path/to/main.lsmx path/to/config.vn
+                        lnrc -a path/to/main.lsmx path/to/config.vn
                     </code>
                 </pre>
                 Now watch as your program echoes out your input!<br/><br/>
