@@ -2,12 +2,12 @@
 <html>
 
     <head>
-        <link rel="stylesheet" href="Resources/style.css">
-        <link rel="icon" type="image/x-icon" href="Resources/favicon.ico">
-        <link href="Resources/prism.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../Resources/style.css">
+        <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
+        <link href="../Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>
-            ALNOOR Docs - Echo program
+            ALNOOR Docs - Hello World!
         </title>
     </head>
 
@@ -20,7 +20,7 @@
             }, 230);
             });
         </script>
-        <script src="Resources/prism.js"></script>
+        <script src="../Resources/prism.js"></script>
         <br/>
         <section>
             <div class="rt-container" align="center">
@@ -29,16 +29,16 @@
                         <div id="container">
                             <nav>
                                 <ul>
-                                    <li><a href="index.html">// Home</a></li>
+                                    <li><a href="../Pages/index.html">// Home</a></li>
                                     <li><a href="#">// Projects ></a>
                                         <ul>
-                                            <li><a href="projects.html">// Projects</a></li>
-                                            <li><a href="mprojects.html">// Main Projects</a></li>
+                                            <li><a href="../Pages/projects.html">// Projects</a></li>
+                                            <li><a href="../Pages/mprojects.html">// Main Projects</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="updates.html">// Updates</a></li>
-                                    <li><a href="socials.html">// Socials</a></li>
-                                    <li><a href="aboutme.html">// About Me</a></li>
+                                    <li><a href="../Pages/updates.html">// Updates</a></li>
+                                    <li><a href="../Pages/socials.html">// Socials</a></li>
+                                    <li><a href="../Pages/aboutme.html">// About Me</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -56,24 +56,19 @@
                 <a href="docs.html">// ALNOOR Documentation</a><br/><br/>
             </h1>
             <h2 class="fade2" align="center">
-                As with the last tutorial, initialise a project and then write<br/> the following code into the "config.vn" file:
+                First of all, create a project using the instructions<br/>detailed on <a href="createproject.html">this page</a>. Then write the following code into the "config.vn" file:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
                         CORE.OUT
-                        CORE.IN.STR 
                     </code>
                 </pre>
                 Then edit the "main.lsmx" file and write the following code into it:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                        _fn main() { // Main function
-                            while (true) { // Loop
-                                println( // Print
-                                    in_str() // Input (String)
-                                );
-                            }
+                        fn main() { // Main function
+                            println("Hello World!"); // Print "Hello World!"
                         }
                     </code>
                 </pre>
@@ -84,8 +79,9 @@
                         lnrc -a path/to/main.lsmx path/to/config.vn
                     </code>
                 </pre>
-                Now watch as your program echoes out your input!<br/><br/>
-                <hr><br/>
+                This will automatically transpile to a .java file and then<br/> compile to a .class file and be packed into a .jar file and run.<br/><br/>
+                Like so:<br/>
+                <img src="../Resources/Hello World.png" width="50%"></img><br/><hr><br/>
             </h1>
         </div>
     </body>
