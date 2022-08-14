@@ -49,7 +49,7 @@ nav ul li:hover > ul {
 }
 
 nav ul ul li {
-	width: 250px;
+	width: 300px;
 	float: none;
 	display: list-item;
 	position: relative;
@@ -203,11 +203,21 @@ div.scrollmenu a:hover {
 
 /*Side-by-side lists*/
 
-table,
+table {
+	border: 3px solid gray;
+	border-collapse: collapse;
+	margin: 0px 20px 0px 20px;
+}
+
 th,
 td {
 	border: 3px solid gray;
 	border-collapse: collapse;
+	padding: 10px 10px 0px 0px;
+}
+
+table ul {
+	list-style-type: none;
 }
 
 /*END Side-by-side lists*/
