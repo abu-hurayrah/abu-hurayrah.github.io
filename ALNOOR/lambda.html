@@ -61,33 +61,33 @@
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                        FUNC > LAMBDA
-                        CORE > IN > INT
+                    FUNC > LAMBDA
+                    CORE > IN > INT
                     </code>
                 </pre>
                 Main.lsmx:
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java"> 
-                        fn main() { // Main function
-                            Function func = () -> { // Function as a variable, note the "() ->"
-                                    String str = "";
-                                    int number = in_int (
-                                        "Please enter a number: "
-                                    );
+                    fn main() { // Main function
+                        Function func = () -> { // Function as a variable, note the "() ->"
+                                String str = "";
+                                int number = in_int (
+                                    "Please enter a number: "
+                                );
 
-                                    for (int i = 1; i <= number; i++) {
-                                        str = (i != number) ? str.concat(i + "\n") : str.concat("" + i);
-                                    }
-                                    ret str;
-                            };
+                                for (int i = 1; i <= number; i++) {
+                                    str = (i != number) ? str.concat(i + "\n") : str.concat("" + i);
+                                }
+                                ret str;
+                        };
 
-                            println! ("\n" +
-                                func
-                                .call()
-                                .toString()
-                            );
-                        }
+                        println! ("\n" +
+                            func
+                            .call()
+                            .toString()
+                        );
+                    }
                     </code>
                 </pre>
                 This program may look complicated, but try it and see;<br/>it is much simpler than the same implementation in Java.<br/> 
