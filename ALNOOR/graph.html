@@ -62,22 +62,25 @@
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                    STAT > LGRAPH
+                    STD.STAT.LGRAPH
                     </code>
                 </pre>
                 <pre class="line-numbers">
                     <code class="language-java">
-                    fn main() {
-                        double[] points = new double[10];
+					fn main() {
+						int[] xPoints = new double[101];
+						int[] yPoints = new double[101];
 
-                        for (int i = 0; i <= 10; i++) points[i] = (i * 5);
+						for (int i = -50; i <= 50; i++) xPoints[i + 50] = (i * 5); yPoints[i + 50] = (i * 5);
 
-                        new LGraph (
-                            points,         // Points
-                            500,            // Preferred width
-                            500,            // Preffered height
-                        ).display();
-                    }
+						new LGraph (
+							xPoints,         // X-Points
+							yPoints,         // Y-Points
+							500,             // Preferred width
+							500,             // Preffered height
+							Color.BLACK      // Point and axes colour
+						).draw();
+					}
                     </code>
                 </pre>
                 To run the code, open a terminal and type:
