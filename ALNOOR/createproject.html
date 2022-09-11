@@ -24,7 +24,7 @@
         <script>
             var isDark = localStorage.getItem("isDark");
 
-            if (isDark == 'true') {
+            if (isDark == "true") {
                 document
                 .getElementById("theme")
                 .setAttribute("href", "../Resources/dark.css");
@@ -35,13 +35,12 @@
             }
 
             function toggle() {
-                if (!isDark == 'true') {
+                isDark = localStorage.getItem("isDark");
+                if (isDark == "false") {
                     document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
-                    isDark = true;
                     localStorage.setItem("isDark", true);
                 } else {
                     document.getElementById("theme").setAttribute("href", "../Resources/light.css");
-                    isDark = false;
                     localStorage.setItem("isDark", false);
                 }
             }

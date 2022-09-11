@@ -19,7 +19,7 @@
     <script>
       var isDark = localStorage.getItem("isDark");
 
-      if (isDark) {
+      if (isDark == "true") {
         document
           .getElementById("theme")
           .setAttribute("href", "../Resources/dark.css");
@@ -30,7 +30,7 @@
       }
 
       function toggle() {
-        if (!isDark) {
+        if (isDark == "false") {
           document
             .getElementById("theme")
             .setAttribute("href", "../Resources/dark.css");
