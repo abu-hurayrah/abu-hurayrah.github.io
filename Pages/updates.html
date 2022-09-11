@@ -1,66 +1,110 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link id="theme" rel="stylesheet" href="../Resources/dark.css" />
+    <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico" />
+    <meta charset="UTF-8" />
+    <title>Raiyaxi Ziaoi - Updates</title>
+  </head>
 
-    <head>
-        <link rel="stylesheet" href="../Resources/style.css">
-        <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
-        <meta charset="UTF-8">
-        <title>
-            Raiyaxi Ziaoi - Updates
-        </title>
-    </head>
+  <body>
+    <script>
+      document.body.className = "fade";
+      document.addEventListener("DOMContentLoaded", () => {
+        window.setTimeout(function () {
+          document.body.className = "";
+        }, 230);
+      });
+    </script>
+    <script>
+      var isDark = localStorage.getItem("isDark");
 
-    <body>
-        <script>
-            document.body.className = 'fade';
-            document.addEventListener("DOMContentLoaded", () => {
-            window.setTimeout(function() {
-                document.body.className = '';
-            }, 230);
-            });
-        </script>
-        <br/>
-        <section>
-            <div class="rt-container" align="center">
-                <div class="col-rt-12">
-                    <div class="Scriptcontent">
-                        <div id="container">
-                            <nav>
-                                <ul>
-                                    <li><a href="../index.html">// Home</a></li>
-                                    <li><a href="#">// Projects ></a>
-                                        <ul>
-                                            <li><a href="projects.html">< // Projects</a></li>
-                                            <li><a href="mprojects.html">< // Main Projects</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">// Updates</a></li>
-                                    <li><a href="socials.html">// Socials</a></li>
-                                    <li><a href="aboutme.html">// About Me</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+      if (!isDark) {
+        document
+          .getElementById("theme")
+          .setAttribute("href", "../Resources/dark.css");
+      } else {
+        document
+          .getElementById("theme")
+          .setAttribute("href", "../Resources/light.css");
+      }
+
+      function toggle() {
+        if (!isDark) {
+          document
+            .getElementById("theme")
+            .setAttribute("href", "../Resources/dark.css");
+          isDark = true;
+          localStorage.setItem("isDark", true);
+        } else {
+          document
+            .getElementById("theme")
+            .setAttribute("href", "../Resources/light.css");
+          isDark = false;
+          localStorage.setItem("isDark", false);
+        }
+      }
+    </script>
+    <button
+      style="
+        position: fixed;
+        bottom: 92%;
+        right: 5px;
+        margin: 0;
+        padding: 5px 3px;
+      "
+      onclick="toggle()"
+    >
+      <b>Light / Dark</b>
+    </button>
+    <br />
+    <section>
+      <div class="rt-container" align="center">
+        <div class="col-rt-12">
+          <div class="Scriptcontent">
+            <div id="container">
+              <nav>
+                <ul>
+                  <li><a href="../index.html">// Home</a></li>
+                  <li>
+                    <a href="#">// Projects ></a>
+                    <ul>
+                      <li><a href="projects.html">< // Projects</a></li>
+                      <li><a href="mprojects.html">< // Main Projects</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">// Updates</a></li>
+                  <li><a href="socials.html">// Socials</a></li>
+                  <li><a href="aboutme.html">// About Me</a></li>
+                </ul>
+              </nav>
             </div>
-        </section>
-
-        <div align="center">
-            <img src="https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ" width="700" height="150"></img>
+          </div>
         </div>
-        <hr>
-        <br/>
+      </div>
+    </section>
 
-        <div class="text">
-            <ul>
-                <li>
-                    <i>&nbsp;28 / 07 / 2022</i><br/> <a href="../Updates/website.html">&nbsp;&nbsp;&nbsp;&nbsp;// This website was created!</a>
-                </li><br/>
-                <li>
-                    <i>&nbsp;18 / 08 / 2022</i><br/> <a href="../Updates/sabah.html">&nbsp;&nbsp;&nbsp;&nbsp;// ALSABAH in development.</a>
-                </li><br/>
-            </ul>
-        </div>
-    </body>
+    <br />
+    <hr />
+    <br />
 
+    <div class="text">
+      <ul>
+        <li>
+          <i>&nbsp;28 / 07 / 2022</i><br />
+          <a href="../Updates/website.html"
+            >&nbsp;&nbsp;&nbsp;&nbsp;// This website was created!</a
+          >
+        </li>
+        <br />
+        <li>
+          <i>&nbsp;18 / 08 / 2022</i><br />
+          <a href="../Updates/sabah.html"
+            >&nbsp;&nbsp;&nbsp;&nbsp;// ALSABAH in development.</a
+          >
+        </li>
+        <br />
+      </ul>
+    </div>
+  </body>
 </html>

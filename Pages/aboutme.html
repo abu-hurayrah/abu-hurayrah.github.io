@@ -1,119 +1,160 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link id="theme" rel="stylesheet" href="../Resources/dark.css" />
+    <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico" />
+    <meta charset="UTF-8" />
+    <title>Raiyaxi Ziaoi - About me</title>
+  </head>
 
-    <head>
-        <link rel="stylesheet" href="../Resources/style.css">
-        <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
-        <meta charset="UTF-8">
-        <title>
-            Raiyaxi Ziaoi - About me
-        </title>
-    </head>
+  <body>
+    <script>
+      document.body.className = "fade";
+      document.addEventListener("DOMContentLoaded", () => {
+        window.setTimeout(function () {
+          document.body.className = "";
+        }, 230);
+      });
+    </script>
+    <script>
+      var isDark = localStorage.getItem("isDark");
 
-    <body>
-        <script>
-            document.body.className = 'fade';
-            document.addEventListener("DOMContentLoaded", () => {
-            window.setTimeout(function() {
-                document.body.className = '';
-            }, 230);
-            });
-        </script>
-        <br/>
-        <section>
-            <div class="rt-container" align="center">
-                <div class="col-rt-12">
-                    <div class="Scriptcontent">
-                        <div id="container">
-                            <nav>
-                                <ul>
-                                    <li><a href="../index.html">// Home</a></li>
-                                    <li><a href="#">// Projects ></a>
-                                        <ul>
-                                            <li><a href="projects.html">< // Projects</a></li>
-                                            <li><a href="mprojects.html">< // Main Projects</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="updates.html">// Updates</a></li>
-                                    <li><a href="socials.html">// Socials</a></li>
-                                    <li><a href="#">// About Me</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+      if (isDark) {
+        document
+          .getElementById("theme")
+          .setAttribute("href", "../Resources/dark.css");
+      } else {
+        document
+          .getElementById("theme")
+          .setAttribute("href", "../Resources/light.css");
+      }
+
+      function toggle() {
+        if (!isDark) {
+          document
+            .getElementById("theme")
+            .setAttribute("href", "../Resources/dark.css");
+          isDark = true;
+          localStorage.setItem("isDark", true);
+        } else {
+          document
+            .getElementById("theme")
+            .setAttribute("href", "../Resources/light.css");
+          isDark = false;
+          localStorage.setItem("isDark", false);
+        }
+      }
+    </script>
+    <button
+      style="
+        position: fixed;
+        bottom: 92%;
+        right: 5px;
+        margin: 0;
+        padding: 5px 3px;
+      "
+      onclick="toggle()"
+    >
+      <b>Light / Dark</b>
+    </button>
+    <br />
+    <section>
+      <div class="rt-container" align="center">
+        <div class="col-rt-12">
+          <div class="Scriptcontent">
+            <div id="container">
+              <nav>
+                <ul>
+                  <li><a href="../index.html">// Home</a></li>
+                  <li>
+                    <a href="#">// Projects ></a>
+                    <ul>
+                      <li><a href="projects.html">< // Projects</a></li>
+                      <li><a href="mprojects.html">< // Main Projects</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="updates.html">// Updates</a></li>
+                  <li><a href="socials.html">// Socials</a></li>
+                  <li><a href="#">// About Me</a></li>
+                </ul>
+              </nav>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div align="center">
-            <img src="https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ" width="700" height="150"></img>
-        </div>
-        <hr>
-        <br/>
-        <div class="text fade1">
-            <h2>
-                &nbsp;&nbsp;My name is <u>Raiyaxi Ziaoi</u>. I enjoy <i>CS</i>, <i>languages</i> and other fun things.<br/>
-                &nbsp;&nbsp;I also make stuff that I think is quite cool.<br/>
-            </h2>
-        </div>
-        <div class="text fade2">
-            <div align="center">
-                <h1>
-                    <u>
-                        Interests:
-                    </u>
-                </h1>
-            </div>
-        </div>
-        <br>
-        <div align="left" class="small" style="font-size: 30px;">
-            <table height=400>
-            <b>
-                <tr>
-                    <th class="fade5">CS</th>
-                    <th class="fade10">Languages</th>
-                    <th class="fade15">Other</th>
-                </tr>
-                <tr>
-                    <td>
-                        <ul class="fade3">
-                        <br>
-                        <li>&nbsp;CS for Medicine</li>
-                        <li>&nbsp;Cryptography & Cybersecurity</li>
-                        <li>&nbsp;ML & AI</li>
-                        <li>&nbsp;Web, Mobile, Desktop & Game Dev&nbsp;&nbsp;&nbsp;</li>
-                        <li>&nbsp;Programming:</li>
-                        <ul>
-                            <li>&nbsp;&nbsp;&nbsp;&nbsp;Java, Python, C# ✨</li>
-                            <li>&nbsp;&nbsp;&nbsp;&nbsp;Kotlin, Dart, Rust, JS 🤔</li>
-                            <li>&nbsp;&nbsp;&nbsp;&nbsp;TS, C / C++, Go 📚</li>
-                        </ul>
-                    </ul>
-                    <br>
-                    <td>
-                    <ul class="fade5">
-                        <li>&nbsp;English, Bengali, Hindi ✨&nbsp;&nbsp;&nbsp;</li>
-                        <li>&nbsp;Urdu, Arabic 🤔</li>
-                        <li>&nbsp;Turkish, Persian, French 📚</li>
-                        <li>&nbsp;Russian, Japanese, <br/>&nbsp;Chinese, Korean,<br/>&nbsp;Indoneasian, Greek ✏️</li>
-                    </ul>
-                    </td>
-                    <td width=30%>
-                    <ul class="fade7">
-                        <li>&nbsp;Poetry 📜</li>
-                        <li>&nbsp;Mathematics ✏️</li>
-                        <li>&nbsp;Science 🔬</li><br/>
-                        <li>&nbsp;Anime 💻</li>
-                        <li>&nbsp;Games 🎮</li>
-                    </ul>
-                    </td>
-                </tr>
-                </b>
-        </table>
-        </div>
-        <br>
-        <hr>
-        <br>
-    </body>
+    <br />
+    <hr />
+    <br />
+    <div class="text fade1">
+      <h2>
+        &nbsp;&nbsp;My name is <u>Raiyaxi Ziaoi</u>. I enjoy <i>CS</i>,
+        <i>languages</i> and other fun things.<br />
+        &nbsp;&nbsp;I also make stuff that I think is quite cool.<br />
+      </h2>
+    </div>
+    <div class="text fade2">
+      <div align="center">
+        <h1>
+          <u> Interests: </u>
+        </h1>
+      </div>
+    </div>
+    <br />
+    <div align="left" class="small" style="font-size: 30px">
+      <table height="400">
+        <b>
+          <tr>
+            <th class="fade5">CS</th>
+            <th class="fade10">Languages</th>
+            <th class="fade15">Other</th>
+          </tr>
+          <tr>
+            <td>
+              <ul class="fade3">
+                <br />
+                <li>&nbsp;CS for Medicine</li>
+                <li>&nbsp;Cryptography & Cybersecurity</li>
+                <li>&nbsp;ML & AI</li>
+                <li>&nbsp;Web, Mobile, Desktop & Game Dev&nbsp;&nbsp;&nbsp;</li>
+                <li>&nbsp;Programming:</li>
+                <ul>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;Java, Python, C# ✨</li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;Kotlin, Dart, Rust, JS 🤔</li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;TS, C / C++, Go 📚</li>
+                </ul>
+              </ul>
+              <br />
+            </td>
 
+            <td>
+              <ul class="fade5">
+                <li>&nbsp;English, Bengali, Hindi ✨&nbsp;&nbsp;&nbsp;</li>
+                <li>&nbsp;Urdu, Arabic 🤔</li>
+                <li>&nbsp;Turkish, Persian, French 📚</li>
+                <li>
+                  &nbsp;Russian, Japanese, <br />&nbsp;Chinese, Korean,<br />&nbsp;Indoneasian,
+                  Greek ✏️
+                </li>
+              </ul>
+            </td>
+            <td width="30%">
+              <ul class="fade7">
+                <li>&nbsp;Poetry 📜</li>
+                <li>&nbsp;Mathematics ✏️</li>
+                <li>&nbsp;Science 🔬</li>
+                <br />
+                <li>&nbsp;Anime 💻</li>
+                <li>&nbsp;Games 🎮</li>
+              </ul>
+            </td>
+          </tr>
+        </b>
+      </table>
+    </div>
+    <br />
+    <hr />
+    <br />
+  </body>
 </html>

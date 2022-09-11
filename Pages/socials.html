@@ -1,83 +1,127 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link id="theme" rel="stylesheet" href="../Resources/dark.css" />
+    <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico" />
+    <meta charset="UTF-8" />
+    <title>Raiyaxi Ziaoi - Socials</title>
+  </head>
 
-    <head>
-        <link rel="stylesheet" href="../Resources/style.css">
-        <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
-        <meta charset="UTF-8">
-        <title>
-            Raiyaxi Ziaoi - Socials
-        </title>
-    </head>
+  <body>
+    <script>
+      document.body.className = "fade";
+      document.addEventListener("DOMContentLoaded", () => {
+        window.setTimeout(function () {
+          document.body.className = "";
+        }, 230);
+      });
+    </script>
+    <script>
+      var isDark = localStorage.getItem("isDark");
 
-    <body>
-        <script>
-            document.body.className = 'fade';
-            document.addEventListener("DOMContentLoaded", () => {
-            window.setTimeout(function() {
-                document.body.className = '';
-            }, 230);
-            });
-        </script>
-        <br/>
-        <section>
-            <div class="rt-container" align="center">
-                <div class="col-rt-12">
-                    <div class="Scriptcontent">
-                        <div id="container">
-                            <nav>
-                                <ul>
-                                    <li><a href="../index.html">// Home</a></li>
-                                    <li><a href="#">// Projects ></a>
-                                        <ul>
-                                            <li><a href="projects.html">< // Projects</a></li>
-                                            <li><a href="mprojects.html">< // Main Projects</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="updates.html">// Updates</a></li>
-                                    <li><a href="#">// Socials</a></li>
-                                    <li><a href="aboutme.html">// About Me</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+      if (isDark) {
+        document
+          .getElementById("theme")
+          .setAttribute("href", "../Resources/dark.css");
+      } else {
+        document
+          .getElementById("theme")
+          .setAttribute("href", "../Resources/light.css");
+      }
+
+      function toggle() {
+        if (!isDark) {
+          document
+            .getElementById("theme")
+            .setAttribute("href", "../Resources/dark.css");
+          isDark = true;
+          localStorage.setItem("isDark", true);
+        } else {
+          document
+            .getElementById("theme")
+            .setAttribute("href", "../Resources/light.css");
+          isDark = false;
+          localStorage.setItem("isDark", false);
+        }
+      }
+    </script>
+    <button
+      style="
+        position: fixed;
+        bottom: 92%;
+        right: 5px;
+        margin: 0;
+        padding: 5px 3px;
+      "
+      onclick="toggle()"
+    >
+      <b>Light / Dark</b>
+    </button>
+    <br />
+    <section>
+      <div class="rt-container" align="center">
+        <div class="col-rt-12">
+          <div class="Scriptcontent">
+            <div id="container">
+              <nav>
+                <ul>
+                  <li><a href="../index.html">// Home</a></li>
+                  <li>
+                    <a href="#">// Projects ></a>
+                    <ul>
+                      <li><a href="projects.html">< // Projects</a></li>
+                      <li><a href="mprojects.html">< // Main Projects</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="updates.html">// Updates</a></li>
+                  <li><a href="#">// Socials</a></li>
+                  <li><a href="aboutme.html">// About Me</a></li>
+                </ul>
+              </nav>
             </div>
-        </section>
-
-        <div align="center">
-            <img src="https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ" width="700" height="150"></img>
+          </div>
         </div>
-        <hr>
-        <br/>
+      </div>
+    </section>
 
-        <div class="text" align="center"><b>
-            <ul>
-                <li class="fade1">
-                    <i>Discord</i><br> Raiyaxi Ziaoi#4975
-                </li><br/>
-                <li class="fade2">
-                    <i>Matrix</i><br> @raiyaxi_ziaoi:matrix.org
-                </li><br/>
-                <li class="fade3">
-                    <i>GitHub</i><br>
-                    <a href="https://www.github.com/Raiyaxi-Ziaoi">// Raiyaxi Ziaoi</a>
-                </li><br/>
-                <li class="fade5">
-                    <i>Itch</i><br>
-                    <a href="https://raiyaxi-ziaoi.itch.io">// Raiyaxi Ziaoi</a>
-                </li><br/>
-                <li class="fade7">
-                    <i>Discord Server</i><br/>
-                    <a href="https://discord.gg/TB6UBhynhY">// The Round Table</a>
-                </li><br/>
-            </ul>
-            </b>
-        </div>
-		
-        <br>
-        <hr>
-        <br>
-    </body>
+    <br />
+    <hr />
+    <br />
 
+    <div class="text" align="center">
+      <b>
+        <ul>
+          <li class="fade1">
+            <i>Discord</i><br />
+            Raiyaxi Ziaoi#4975
+          </li>
+          <br />
+          <li class="fade2">
+            <i>Matrix</i><br />
+            @raiyaxi_ziaoi:matrix.org
+          </li>
+          <br />
+          <li class="fade3">
+            <i>GitHub</i><br />
+            <a href="https://www.github.com/Raiyaxi-Ziaoi">// Raiyaxi Ziaoi</a>
+          </li>
+          <br />
+          <li class="fade5">
+            <i>Itch</i><br />
+            <a href="https://raiyaxi-ziaoi.itch.io">// Raiyaxi Ziaoi</a>
+          </li>
+          <br />
+          <li class="fade7">
+            <i>Discord Server</i><br />
+            <a href="https://discord.gg/TB6UBhynhY">// The Round Table</a>
+          </li>
+          <br />
+        </ul>
+      </b>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+  </body>
 </html>

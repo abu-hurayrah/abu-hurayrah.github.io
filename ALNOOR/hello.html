@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <link rel="stylesheet" href="../Resources/style.css">
+        <link id="theme" rel="stylesheet" href="../Resources/dark.css">
         <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
         <link href="../Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
@@ -21,6 +21,34 @@
             });
         </script>
         <script src="../Resources/prism.js"></script>
+        <script>
+            var isDark = localStorage.getItem("isDark");
+
+            if (isDark) {
+                document
+                .getElementById("theme")
+                .setAttribute("href", "../Resources/dark.css");
+            } else {
+                document
+                .getElementById("theme")
+                .setAttribute("href", "../Resources/light.css");
+            }
+
+            function toggle() {
+                if (!isDark) {
+                    document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                    isDark = true;
+                    localStorage.setItem("isDark", true);
+                } else {
+                    document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+                    isDark = false;
+                    localStorage.setItem("isDark", false);
+                }
+            }
+        </script>
+        <button style="position:fixed;bottom:92%;right:5px;margin:0;padding:5px 3px;" onclick="toggle()">
+            <b>Light / Dark</b>
+        </button>
         <br/>
         <section>
             <div class="rt-container" align="center">
@@ -47,9 +75,7 @@
             </div>
         </section>
 
-        <div align="center">
-            <img src="https://i.imgur.com/lRzzpEU.png" width="700" height="150"></img>
-        </div>
+        <br/>
         <br/><hr><br/>
         <div class="text">
             <h1 class="fade1" align="center">
