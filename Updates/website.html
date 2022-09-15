@@ -2,7 +2,7 @@
 <html>
     
     <head>
-        <link rel="stylesheet" href="../Resources/style.css">
+        <link id="theme" rel="stylesheet" href="../Resources/dark.css">
         <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
         <meta charset="UTF-8">
         <title>
@@ -49,29 +49,41 @@
             <img src="https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ" width="700" height="150"></img>
         </div>
         <script>
+            document.body.className = 'fade';
+            document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function() {
+                document.body.className = '';
+            }, 230);
+            });
+        </script>
+        <script src="../Resources/prism.js"></script>
+        <script>
             var isDark = localStorage.getItem("isDark");
 
             if (isDark == "true") {
-                document.getElementById("theme").setAttribute("href", "Resources/dark.css");
+                document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
                 document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
             } else {
                 document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillahl.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
-                document.getElementById("theme").setAttribute("href", "Resources/light.css");
+                document.getElementById("theme").setAttribute("href", "../Resources/light.css");
             }
 
             function toggle() {
                 isDark = localStorage.getItem("isDark");
                 if (isDark == "false") {
-                    document.getElementById("theme").setAttribute("href", "Resources/dark.css");
+                    document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
                     document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
                     localStorage.setItem("isDark", true);
-                } else {
+                } else if (isDark == "true") {
                     document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillahl.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
-                    document.getElementById("theme").setAttribute("href", "Resources/light.css");
+                    document.getElementById("theme").setAttribute("href", "../Resources/light.css");
                     localStorage.setItem("isDark", false);
                 }
             }
         </script>
+        <button style="position:fixed;bottom:92%;right:5px;margin:0;padding:5px 3px;" onclick="toggle()">
+            <b>Light / Dark</b>
+        </button>
         <hr>
         <br/>
 
