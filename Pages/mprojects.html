@@ -9,6 +9,11 @@
 
   <body>
     <script>
+      if (localStorage.getItem("isDark") === null) {
+        localStorage.setItem("isDark", true);
+      }
+    </script>
+    <script>
       document.body.className = "fade";
       document.addEventListener("DOMContentLoaded", () => {
         window.setTimeout(function () {
