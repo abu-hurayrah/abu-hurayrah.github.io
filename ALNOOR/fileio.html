@@ -7,7 +7,7 @@
         <link href="../Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>
-            ALNOOR Docs - Lambdas
+            ALNOOR Docs - File IO
         </title>
     </head>
 
@@ -86,43 +86,42 @@
                 <a href="docs.html">// ALNOOR Documentation</a><br/><br/>
             </h1>
             <h2 class="fade2" align="center">
-                In ALNOOR, a key feature is the ability to store functions as variables.<br/><br/>
-                Config:
+                Interacting with the file system is an indispensible part of any programming language.<br/>
+                In the ALNOOR.STD.IO.FILIO library, there are easy to use functions to facilitate FileIO.<br/>
+                Here is how to use it:<br/>
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                    STD.FUNC.LAMBDA
-                    STD.IO.INT
+                    STD.IO.FILEIO
                     </code>
                 </pre>
-                Main.lsmx:
-                <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
-                    fn main() {
-                        Blank func = () l> {
-                                String str = "";
-                                int number = in_int (
-                                    "Please enter a number: "
-                                );
-
-                                for (int i = 1; i <= number; i++) 
-                                    str = (i != number) ? 
-                                    str.concat(i + "\n") : 
-                                    str.concat("" + i);
-                                    
-                                ret str;
-                        };
-
-                        println! ("\n" +
-                            func.call().toString()
-                        );
-                    }
+                        fn main() {
+                            create (
+                                "hello.txt"
+                            );
+                            write (
+                                "hello.txt",
+                                "Hello World!"
+                            );
+                            print! (
+                                read (
+                                    "hello.txt"
+                                )
+                            );
+                        }
                     </code>
                 </pre>
-                This program may look complicated, but try it and see;<br/>it is much simpler than the same implementation in Java.<br/>
+                To run the code, open a terminal and type:
                 <br/>
-                <img src="https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/Lambdas.png?token=GHSAT0AAAAAABXCMKG4WHB6W4INTNKIB62GYYH4SFA" width="50%"></img><br/><hr><br/><hr><br/>
+                <pre>
+                    <code class="language-batch">
+                        lnrc -a path/to/main.lsmx path/to/config.vn
+                    </code>
+                </pre>
+                This will print out, "Hello world!" but also create a file called hello.txt,<br/> written in which is the same string.<br/><br/>
+                <hr><br/>
             </h1>
         </div>
     </body>

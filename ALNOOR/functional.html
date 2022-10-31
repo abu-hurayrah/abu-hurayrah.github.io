@@ -7,7 +7,7 @@
         <link href="../Resources/prism.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>
-            ALNOOR Docs - Lambdas
+            ALNOOR Docs - Functional Programming
         </title>
     </head>
 
@@ -86,43 +86,89 @@
                 <a href="docs.html">// ALNOOR Documentation</a><br/><br/>
             </h1>
             <h2 class="fade2" align="center">
-                In ALNOOR, a key feature is the ability to store functions as variables.<br/><br/>
-                Config:
+                ALNOOR is a functional programming language. It may be built on Java,<br/> 
+                but it has made emphasis on functional programming.<br/>
+                This is an example:<br/>
                 <br/>
                 <pre class="line-numbers">
                     <code class="language-java">
+                    STD.FUNC.RELAY
                     STD.FUNC.LAMBDA
                     STD.IO.INT
+                    STD.IO.CHAR
+                    STD.IO.FORMAT
                     </code>
                 </pre>
-                Main.lsmx:
-                <br/>
                 <pre class="line-numbers">
-                    <code class="language-java">
-                    fn main() {
-                        Blank func = () l> {
-                                String str = "";
-                                int number = in_int (
-                                    "Please enter a number: "
-                                );
-
-                                for (int i = 1; i <= number; i++) 
-                                    str = (i != number) ? 
-                                    str.concat(i + "\n") : 
-                                    str.concat("" + i);
-                                    
-                                ret str;
-                        };
-
-                        println! ("\n" +
-                            func.call().toString()
-                        );
-                    }
+                    <code class="language-java">					
+                        _fn int start() {
+                            Function&lt;Object&gt; function = (Object... in) l> {
+                                int x = (int)in[0], y = (int)in[1];
+                                char op = (char)in[2];
+    
+                                if (op == '+') {
+                                    ret format! (
+                                        "\n{0} {1} {2} = {3}", 
+                                        x, op, y, 
+                                        x + y
+                                    );
+                                } elif (op == '-') {
+                                    ret format! (
+                                        "\n{0} {1} {2} = {3}", 
+                                        x, op, y, 
+                                        x - y
+                                    );
+                                } elif (op == '*') {
+                                    ret format! (
+                                        "\n{0} {1} {2} = {3}", 
+                                        x, op, y, 
+                                        x * y
+                                    );
+                                } elif (op == '/') {
+                                    ret format! (
+                                        "\n{0} {1} {2} = {3}", 
+                                        x, op, y, 
+                                        x / y
+                                    );
+                                }        
+                                ret "\nUnknown operation";
+                            };
+    
+                            relay ( 
+                                function.call (
+                                    new Object[] {
+                                        in_int (
+                                            "Enter x: "
+                                        ),
+                                        in_int (
+                                            "\nEnter y: "
+                                        ),
+                                        in_cha (
+                                            "\nEnter operation: "
+                                        )
+                                    }
+                                ).toString()
+                            );
+                            ret 0;
+                        }
+    
+                        fn main() {
+                            System.exit (
+                                start()
+                            );
+                        }
                     </code>
                 </pre>
-                This program may look complicated, but try it and see;<br/>it is much simpler than the same implementation in Java.<br/>
+                To run the code, open a terminal and type:
                 <br/>
-                <img src="https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/Lambdas.png?token=GHSAT0AAAAAABXCMKG4WHB6W4INTNKIB62GYYH4SFA" width="50%"></img><br/><hr><br/><hr><br/>
+                <pre>
+                    <code class="language-batch">
+                        lnrc -a path/to/main.lsmx path/to/config.vn
+                    </code>
+                </pre>
+                This program is a simple calculator that follows unconventional rules when <br/>
+                it comes to traditional OOP but it gets rid of the fuss that comes with OOP.<br/>
+                <hr><br/>
             </h1>
         </div>
     </body>
