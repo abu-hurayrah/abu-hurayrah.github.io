@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link id="theme" rel="stylesheet" href="../Resources/dark.css">
+        <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
+        <meta charset="UTF-8">
+        <title>
+            Raiyaxi Ziaoi - Updates
+        </title>
+    </head>
+
+    <body>
+        <script>
+            if (localStorage.getItem("isDark") === null) {
+                localStorage.setItem("isDark", true);
+            }  
+        </script>
+        <script>
+            document.body.className = 'fade';
+            document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function() {
+                document.body.className = '';
+            }, 230);
+            });
+        </script>
+        <br/>
+        <section>
+            <div class="rt-container" align="center">
+                <div class="col-rt-12">
+                    <div class="Scriptcontent">
+                        <div id="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="../index.html">// Home</a></li>
+                                    <li><a href="#">// Projects ></a>
+                                        <ul>
+                                            <li><a href="../Pages/projects.html">< // Projects</a></li>
+                                            <li><a href="../Pages/mprojects.html">< // Main Projects</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="../Pages/updates.html">// Updates</a></li>
+                                    <li><a href="../Pages/socials.html">// Socials</a></li>
+                                    <li><a href="../Pages/aboutme.html">// About Me</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="reactive" align="center">
+            <img src="https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ" width="700" height="150"></img>
+        </div>
+        <script>
+            document.body.className = 'fade';
+            document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function() {
+                document.body.className = '';
+            }, 230);
+            });
+        </script>
+        <script src="../Resources/prism.js"></script>
+        <script>
+            var isDark = localStorage.getItem("isDark");
+
+            if (isDark == "true") {
+                document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+            } else {
+                document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillahl.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+                document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+            }
+
+            function toggle() {
+                isDark = localStorage.getItem("isDark");
+                if (isDark == "false") {
+                    document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                    document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+                    localStorage.setItem("isDark", true);
+                } else if (isDark == "true") {
+                    document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillahl.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+                    document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+                    localStorage.setItem("isDark", false);
+                }
+            }
+        </script>
+        <button style="position:fixed;bottom:92%;right:5px;margin:0;padding:5px 3px;" onclick="toggle()">
+            <b>Light / Dark</b>
+        </button>
+        <hr>
+        <br/>
+
+        <div class="text" style="font-size: 115%;">
+            <div class="fade1">
+                Wahdah is a safe, secure and customisable terminal-based blogging platform with a client made in Java. <br/><br/>
+            </div>
+            <div class="fade1">
+                It achieves security and transparency with its account system and write-once-read-only dataabase. <br/><br/>
+            </div>
+            <div class="fade2">
+                Account can be freely made without an email but can be deleted without warning by moderators, just like the blogs.<br/><br/>
+            </div>
+            <div class="fade2">
+                With the client being made in simple Java, customisations on its appearance can be made at the user's will.<br/><br/>
+            </div>
+            <div class="fade3">
+                The lack of required connections to other accounts means that you, fortunately, do not have to sell your soul to Google.<br/><br/>
+            </div>
+            <div class="fade3">
+                Though the client will be open-sourced, the database design and access system does not make it easy for databreaches to occur.<br/><br/>
+            </div>
+            <div class="fade5">
+                This allows for maximum transparency, privacy, customisability and security. Once something goes up, it never goes down!<br/><br/>
+            </div>
+            <div class="fade5">
+                This encourages freedom of speech and availability of information. However, fake news will be very common so use your judgment.<br/><br/>
+            </div>
+            <div class="fade7">
+                There will be moderators and if there is an account spreading misinformation, it and its posts will be taken down.<br/>
+            </div>
+        </div>
+        <br/>
+        <hr>
+    </body>
+
+</html>
