@@ -10,46 +10,42 @@
   <body>
     <script>
       if (localStorage.getItem("isDark") === null) {
-        localStorage.setItem("isDark", true);
-      }
-    </script>
-    <script>
-      document.body.className = "fade";
+          localStorage.setItem("isDark", true);
+      }  
+  </script>
+  <script>
+      document.body.className = 'fade';
       document.addEventListener("DOMContentLoaded", () => {
-        window.setTimeout(function () {
-          document.body.className = "";
-        }, 230);
+      window.setTimeout(function() {
+          document.body.className = '';
+      }, 230);
       });
-    </script>
-    <script>
+  </script>
+  <script src="../Resources/prism.js"></script>
+  <script>
       var isDark = localStorage.getItem("isDark");
 
       if (isDark == "true") {
-        document
+          document
           .getElementById("theme")
           .setAttribute("href", "../Resources/dark.css");
       } else {
-        document
+          document
           .getElementById("theme")
           .setAttribute("href", "../Resources/light.css");
       }
 
       function toggle() {
-        if (isDark == "false") {
-          document
-            .getElementById("theme")
-            .setAttribute("href", "../Resources/dark.css");
-          isDark = true;
-          localStorage.setItem("isDark", true);
-        } else {
-          document
-            .getElementById("theme")
-            .setAttribute("href", "../Resources/light.css");
-          isDark = false;
-          localStorage.setItem("isDark", false);
-        }
+          isDark = localStorage.getItem("isDark");
+          if (isDark == "false") {
+              document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+              localStorage.setItem("isDark", true);
+          } else {
+              document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+              localStorage.setItem("isDark", false);
+          }
       }
-    </script>
+  </script>
     <button
       style="
         position: fixed;
