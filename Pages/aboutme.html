@@ -113,9 +113,35 @@
                 <br/>
                 <li>&nbsp;Programming Languages:</li>
                 <ul>
+                  <script>
+                    var isDark = localStorage.getItem("isDark");
+        
+                    if (isDark == "true") {
+                        document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                        document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+                    } else {
+                        document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillahl.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+                        document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+                    }
+        
+                    function toggle() {
+                        isDark = localStorage.getItem("isDark");
+                        if (isDark == "false") {
+                            document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                            document.getElementById("reactive").innerHTML = "<li><img src=\"https://skillicons.dev/icons?i=java,c,cpp,py&theme=dark\"/></li><li><img src=\"https://skillicons.dev/icons?i=html,css,js,ts&theme=dark\"/></li><li><img src=\"https://skillicons.dev/icons?i=rust,clojure,kotlin,julia&theme=dark\"/></li>";
+                            localStorage.setItem("isDark", true);
+                        } else if (isDark == "true") {
+                            document.getElementById("reactive").innerHTML = "<li><img src=\"https://skillicons.dev/icons?i=java,c,cpp,py&theme=light\"/></li><li><img src=\"https://skillicons.dev/icons?i=html,css,js,ts&theme=light\"/></li><li><img src=\"https://skillicons.dev/icons?i=rust,clojure,kotlin,julia&theme=light\"/></li>";
+                            document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+                            localStorage.setItem("isDark", false);
+                        }
+                    }
+                </script>
+                <div id="reactive">
                   <li><img src="https://skillicons.dev/icons?i=java,c,cpp,py&theme=dark"/></li>
                   <li><img src="https://skillicons.dev/icons?i=html,css,js,ts&theme=dark"/></li>
                   <li><img src="https://skillicons.dev/icons?i=rust,clojure,kotlin,julia&theme=dark"/></li>
+                </div>
                 </ul>
               </ul>
               <br />
@@ -134,12 +160,12 @@
             </td>
             <td width="30%">
               <ul class="fade7">
-                <li>&nbsp;Poetry 📜</li><br/>
-                <li>&nbsp;Mathematics ✏️</li><br/>
-                <li>&nbsp;Science 🔬</li><br/>
                 <li>&nbsp;Qur'an & Hadith 📚</li><br/>
+                <li>&nbsp;Poetry 📜</li><br/>
                 <li>&nbsp;History 🔬</li><br/>
-                <li>&nbsp;Philisophy 📜</li><br/>
+                <li>&nbsp;Science 🔬</li><br/>
+                <li>&nbsp;Mathematics ✏️</li><br/>
+                <li>&nbsp;Anime ✨</li><br/>
               </ul>
             </td>
           </tr>
