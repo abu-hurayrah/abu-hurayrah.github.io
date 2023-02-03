@@ -94,8 +94,8 @@ body {
 }
 
 body.fade {
-  opacity: 0;
-}
+    opacity: 0;
+}   
 
 hr {
   height: 2px;
@@ -161,41 +161,60 @@ div.scrollmenu a:hover {
 /*Fade*/
 
 .fade1 {
-  animation: fadeIn 1s;
+    animation: fadeIn 1s;
 }
 
 .fade2 {
-  animation: fadeIn 2s;
+    animation: fadeIn 2s;
 }
 
 .fade3 {
-  animation: fadeIn 3s;
+    animation: fadeIn 3s;
 }
 
 .fade5 {
-  animation: fadeIn 5s;
+    animation: fadeIn 5s;
 }
 
 .fade7 {
-  animation: fadeIn 7s;
+    animation: fadeIn 7s;
 }
 
 .fade10 {
-  animation: fadeIn 10s;
+    animation: fadeIn 10s;
 }
 
 .fade15 {
-  animation: fadeIn 15s;
+    animation: fadeIn 15s;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+/*@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}*/
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
 
-  100% {
-    opacity: 1;
-  }
+    100% {
+        opacity: 1;
+    }
 }
 
 /*END Fade*/
