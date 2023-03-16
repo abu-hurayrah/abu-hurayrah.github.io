@@ -1,259 +1,203 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <link id="theme" rel="stylesheet" href="../Resources/dark.css" />
     <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico" />
     <meta charset="UTF-8" />
     <title>Raiyaxi Ziaoi - Projects</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <script>
-      if (localStorage.getItem("isDark") === null) {
-          localStorage.setItem("isDark", true);
-      }  
-  </script>
-  <script>
-      document.body.className = 'fade';
-      document.addEventListener("DOMContentLoaded", () => {
-      window.setTimeout(function() {
-          document.body.className = '';
-      }, 230);
-      });
-  </script>
-  <script src="../Resources/prism.js"></script>
-  <script>
-      var isDark = localStorage.getItem("isDark");
+        if (localStorage.getItem("isDark") === null) {
+            localStorage.setItem("isDark", true);
+        }  
+    </script>
+    <script>
+        document.body.className = 'fade';
+        document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function () {
+                document.body.className = '';
+            }, 230);
+        });
+    </script>
+    <script src="../Resources/prism.js"></script>
+    <script>
+        var isDark = localStorage.getItem("isDark");
 
-      if (isDark == "true") {
-          document
-          .getElementById("theme")
-          .setAttribute("href", "../Resources/dark.css");
-      } else {
-          document
-          .getElementById("theme")
-          .setAttribute("href", "../Resources/light.css");
-      }
+        if (isDark == "true") {
+            document
+                .getElementById("theme")
+                .setAttribute("href", "../Resources/dark.css");
+        } else {
+            document
+                .getElementById("theme")
+                .setAttribute("href", "../Resources/light.css");
+        }
 
-      function toggle() {
-          isDark = localStorage.getItem("isDark");
-          if (isDark == "false") {
-              document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
-              localStorage.setItem("isDark", true);
-          } else {
-              document.getElementById("theme").setAttribute("href", "../Resources/light.css");
-              localStorage.setItem("isDark", false);
-          }
-      }
-  </script>
-    <button
-      style="
+        function toggle() {
+            isDark = localStorage.getItem("isDark");
+            if (isDark == "false") {
+                document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                localStorage.setItem("isDark", true);
+            } else {
+                document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+                localStorage.setItem("isDark", false);
+            }
+        }
+    </script>
+    <button style="
         position: fixed;
         bottom: 92%;
         right: 5px;
         margin: 0;
         padding: 5px 3px;
-      "
-      onclick="toggle()"
-    >
-      <b>Light / Dark</b>
+      " onclick="toggle()">
+        <b>Light / Dark</b>
     </button>
     <br />
     <section>
-      <div class="rt-container" align="center">
-        <div class="col-rt-12">
-          <div class="Scriptcontent">
-            <div id="container">
-              <nav>
-                <ul>
-                  <li><a href="../index.html">// Home</a></li>
-                  <li>
-                    <a href="#">// Projects ></a>
-                    <ul>
-                      <li><a href="#">< // Projects</a></li>
-                      <li>
-                        <a href="../Pages/mprojects.html">< // Main Projects</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a href="updates.html">// Updates</a></li>
-                  <li><a href="socials.html">// Socials</a></li>
-                  <li><a href="aboutme.html">// About Me</a></li>
-                </ul>
-              </nav>
+        <div class="rt-container" align="center">
+            <div class="col-rt-12">
+                <div class="Scriptcontent">
+                    <div id="container">
+                        <nav>
+                            <ul>
+                                <li><a href="../index.html">// Home</a></li>
+                                <li>
+                                    <a href="#">// Projects ></a>
+                                    <ul>
+                                        <li><a href="#">
+                                                < // Projects</a>
+                                        </li>
+                                        <li>
+                                            <a href="../Pages/mprojects.html">
+                                                < // Main Projects</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="updates.html">// Updates</a></li>
+                                <li><a href="socials.html">// Socials</a></li>
+                                <li><a href="aboutme.html">// About Me</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
     <br />
     <hr />
     <br />
 
     <div class="text scrollmenu" align="center">
-      <div width="100" class="fade1"> 
-        <a href="https://github.com/Raiyaxi-Ziaoi/Desk">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Desk&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Depot">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Depot&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Interest-Calculator">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Interest-Calculator&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-      </div>
+        <div width="100" class="fade1">
+            <a href="https://github.com/Raiyaxi-Ziaoi/Desk">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Desk&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Depot">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Depot&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Interest-Calculator">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Interest-Calculator&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+        </div>
 
-      <div width="100" class="fade2">
-        <a href="https://github.com/Raiyaxi-Ziaoi/Esoteric-Hello-World">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Esoteric-Hello-World&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Bad-Apple">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Bad-Apple&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Graphe">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Graphe&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-      </div>
+        <div width="100" class="fade2">
+            <a href="https://github.com/Raiyaxi-Ziaoi/Esoteric-Hello-World">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Esoteric-Hello-World&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Bad-Apple">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Bad-Apple&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Graphe">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Graphe&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+        </div>
 
-      <div width="100" class="fade3">
-        <a href="https://github.com/Raiyaxi-Ziaoi/JDataBase">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=JDataBase&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Scrubber">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Scrubber&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Keylogger">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Keylogger&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-      </div>
+        <div width="100" class="fade3">
+            <a href="https://github.com/Raiyaxi-Ziaoi/JDataBase">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=JDataBase&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Wahda">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Neovim-Setup&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Scrubber">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Scrubber&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+        </div>
 
-      <div width="100" class="fade5">
-        <a href="https://github.com/Raiyaxi-Ziaoi/Register">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Register&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/ALSABAH">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALSABAH&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/ALNOOR">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALNOOR&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-      </div>
+        <div width="100" class="fade5">
+            <a href="https://github.com/Raiyaxi-Ziaoi/Keylogger">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Keylogger&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Register">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Register&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/ALSABAH">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALSABAH&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+        </div>
 
-      <div width="100" class="fade7">
-        <a href="https://github.com/Raiyaxi-Ziaoi/Rust-Virus">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Rust-Virus&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Prebuilt-C-Functions">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Prebuilt-C-Functions&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Imam-Detector">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Imam-Detector&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-      </div>
-      <div width="100" class="fade7">
-        <a href="https://github.com/Raiyaxi-Ziaoi/ALKHAIR">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALKHAIR&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Arduino-Projects">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Arduino-Projects&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/JS-Self-Driving-Car">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=JS-Self-Driving-Car&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10"
-          />
-        </a>
-      </div>
+        <div width="100" class="fade7">
+            <a href="https://github.com/Raiyaxi-Ziaoi/Raspberry-PI">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Raspberry-PI&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/ALNOOR">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALNOOR&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Rust-Virus">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Rust-Virus&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+        </div>
+        <div width="100" class="fade7">
+            <a href="https://github.com/Raiyaxi-Ziaoi/Garden">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Garden&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Prebuilt-C-Functions">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Prebuilt-C-Functions&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Imam-Detector">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Imam-Detector&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+        </div>
+        <div width="100" class="fade7">
+            <a href="https://github.com/Raiyaxi-Ziaoi/ALKHAIR">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALKHAIR&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Arduino-Projects">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Arduino-Projects&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/JS-Self-Driving-Car">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=JS-Self-Driving-Car&theme=dracula&icon_color=20BB5E&border_color=0d1117&border_radius=10" />
+            </a>
+        </div>
     </div>
     <br />
     <hr />
     <br />
-  </body>
+</body>
+
 </html>

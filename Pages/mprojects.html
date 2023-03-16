@@ -1,90 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <link id="theme" rel="stylesheet" href="../Resources/dark.css" />
     <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico" />
     <meta charset="UTF-8" />
     <title>Raiyaxi Ziaoi - Main Projects</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <script>
-      if (localStorage.getItem("isDark") === null) {
-          localStorage.setItem("isDark", true);
-      }  
-  </script>
-  <script>
-      document.body.className = 'fade';
-      document.addEventListener("DOMContentLoaded", () => {
-      window.setTimeout(function() {
-          document.body.className = '';
-      }, 230);
-      });
-  </script>
-  <script src="../Resources/prism.js"></script>
-  <script>
-      var isDark = localStorage.getItem("isDark");
+        if (localStorage.getItem("isDark") === null) {
+            localStorage.setItem("isDark", true);
+        }  
+    </script>
+    <script>
+        document.body.className = 'fade';
+        document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function () {
+                document.body.className = '';
+            }, 230);
+        });
+    </script>
+    <script src="../Resources/prism.js"></script>
+    <script>
+        var isDark = localStorage.getItem("isDark");
 
-      if (isDark == "true") {
-          document
-          .getElementById("theme")
-          .setAttribute("href", "../Resources/dark.css");
-      } else {
-          document
-          .getElementById("theme")
-          .setAttribute("href", "../Resources/light.css");
-      }
+        if (isDark == "true") {
+            document
+                .getElementById("theme")
+                .setAttribute("href", "../Resources/dark.css");
+        } else {
+            document
+                .getElementById("theme")
+                .setAttribute("href", "../Resources/light.css");
+        }
 
-      function toggle() {
-          isDark = localStorage.getItem("isDark");
-          if (isDark == "false") {
-              document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
-              localStorage.setItem("isDark", true);
-          } else {
-              document.getElementById("theme").setAttribute("href", "../Resources/light.css");
-              localStorage.setItem("isDark", false);
-          }
-      }
-  </script>
-    <button
-      style="
+        function toggle() {
+            isDark = localStorage.getItem("isDark");
+            if (isDark == "false") {
+                document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                localStorage.setItem("isDark", true);
+            } else {
+                document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+                localStorage.setItem("isDark", false);
+            }
+        }
+    </script>
+    <button style="
         position: fixed;
         bottom: 92%;
         right: 5px;
         margin: 0;
         padding: 5px 3px;
-      "
-      onclick="toggle()"
-    >
-      <b>Light / Dark</b>
+      " onclick="toggle()">
+        <b>Light / Dark</b>
     </button>
     <br />
     <section>
-      <div class="rt-container" align="center">
-        <div class="col-rt-12">
-          <div class="Scriptcontent">
-            <div id="container">
-              <nav>
-                <ul>
-                  <li><a href="../index.html">// Home</a></li>
-                  <li>
-                    <a href="#">// Projects ></a>
-                    <ul>
-                      <li>
-                        <a href="../Pages/projects.html">< // Projects</a>
-                      </li>
-                      <li><a href="#">< // Main Projects</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="updates.html">// Updates</a></li>
-                  <li><a href="socials.html">// Socials</a></li>
-                  <li><a href="aboutme.html">// About Me</a></li>
-                </ul>
-              </nav>
+        <div class="rt-container" align="center">
+            <div class="col-rt-12">
+                <div class="Scriptcontent">
+                    <div id="container">
+                        <nav>
+                            <ul>
+                                <li><a href="../index.html">// Home</a></li>
+                                <li>
+                                    <a href="#">// Projects ></a>
+                                    <ul>
+                                        <li>
+                                            <a href="../Pages/projects.html">
+                                                < // Projects</a>
+                                        </li>
+                                        <li><a href="#">
+                                                < // Main Projects</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="updates.html">// Updates</a></li>
+                                <li><a href="socials.html">// Socials</a></li>
+                                <li><a href="aboutme.html">// About Me</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <br />
@@ -92,102 +93,77 @@
     <br />
 
     <div class="text scrollmenu fade1" align="center">
-      <div width="100">
-        <a href="https://github.com/Raiyaxi-Ziaoi/ALNOOR">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALNOOR&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/ALSABAH">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALSABAH&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/ALKHAIR">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALKHAIR&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Desk">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Desk&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Register">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Register&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10"
-          />
-        </a>
-        <a href="https://github.com/Raiyaxi-Ziaoi/Scrubber">
-          <img
-            align="center"
-            height="%100"
-            width="%100"
-            src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Scrubber&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10"
-          />
-        </a>
-      </div>
+        <div width="100">
+            <a href="https://github.com/Raiyaxi-Ziaoi/ALNOOR">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALNOOR&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/ALSABAH">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALSABAH&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/ALKHAIR">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=ALKHAIR&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Wahda">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Wahda&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/LDEUTC-Timetable">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=LDEUTC-Timetable&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Desk">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Desk&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10" />
+            </a>
+            <a href="https://github.com/Raiyaxi-Ziaoi/Register">
+                <img align="center" height="%100" width="%100"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=Raiyaxi-Ziaoi&repo=Register&theme=dracula&icon_color=20BB5E&border_color=222&border_radius=10" />
+            </a>
+        </div>
     </div>
     <br />
     <hr />
     <br />
     <div class="text">
-      <h1 class="fade2">
-        <i>&nbsp;<u>Desk</u></i
-        ><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;A highly customisable Java library to display
-        tables in the terminal.<br /><br />
-      </h1>
-      <h1 class="fade3">
-        <i>&nbsp;<u>Register</u></i
-        ><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;A terminal-based but user-friendly Python
-        program that keeps track of your bookmarks.<br /><br />
-      </h1>
-      <h1 class="fade5">
-        <i>&nbsp;<u>ALNOOR</u></i
-        ><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;A more concise version of Java which may in the
-        future be used for scientific computing.<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;<a href="../ALNOOR/docs.html"
-          >// Documentation</a
-        ><br /><br />
-      </h1>
-      <h1 class="fade5">
-        <i>&nbsp;<u>ALSABAH</u></i
-        ><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;An interpreted helper language for <u>ALNOOR</u
-        ><br />
-      </h1>
-      <h1 class="fade7">
-        <i>&nbsp;<u>Scrubber</u></i
-        ><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;A terminal-based Python program that searches
-        all ".txt" and ".docx" files for a specific keyword.<br /><br />
-      </h1>
-      <h1 class="fade7">
-        <i>&nbsp;<u>ALKHAIR</u></i
-        ><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;A LISP-like language implemented in C.<br /><br />
-      </h1>
+        <h1 class="fade5">
+            <i>&nbsp;<u>ALNOOR</u></i><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;A more concise version of Java which may in the
+            future be used for scientific computing.<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="../ALNOOR/docs.html">// Documentation</a><br /><br />
+        </h1>
+        <h1 class="fade5">
+            <i>&nbsp;<u>ALSABAH</u></i><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;An interpreted helper language for <u>ALNOOR</u><br />
+        </h1>
+        <h1 class="fade7">
+            <i>&nbsp;<u>ALKHAIR</u></i><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;A LISP-like language implemented in C<br /><br />
+        </h1>
+        <h1 class="fade5">
+            <i>&nbsp;<u>Wahda</u></i><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;A terminal based social media application written in Java<br />
+        </h1>
+        <h1 class="fade7">
+            <i>&nbsp;<u>LDEUTC Timetable</u></i><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Raspberry PI E-ink display project written for LDEUTC<br /><br />
+        </h1>
+        <h1 class="fade2">
+            <i>&nbsp;<u>Desk</u></i><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;A highly customisable Java library to display
+            tables in the terminal<br /><br />
+        </h1>
+        <h1 class="fade3">
+            <i>&nbsp;<u>Register</u></i><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;A terminal-based but user-friendly Python
+            program that keeps track of your bookmarks<br /><br />
+        </h1>
     </div>
     <br />
     <hr />
     <br />
-  </body>
+</body>
+
 </html>
