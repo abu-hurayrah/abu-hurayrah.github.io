@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link id="theme" rel="stylesheet" href="../Resources/dark.css">
+        <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
+        <meta charset="UTF-8">
+        <title>
+            Raiyaxi Ziaoi - Updates
+        </title>
+    </head>
+
+    <body>
+        <script>
+            if (localStorage.getItem("isDark") === null) {
+                localStorage.setItem("isDark", true);
+            }  
+        </script>
+        <script>
+            document.body.className = 'fade';
+            document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function() {
+                document.body.className = '';
+            }, 230);
+            });
+        </script>
+        <br/>
+        <section>
+            <div class="rt-container" align="center">
+                <div class="col-rt-12">
+                    <div class="Scriptcontent">
+                        <div id="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="../index.html">// Home</a></li>
+                                    <li><a href="#">// Projects ></a>
+                                        <ul>
+                                            <li><a href="../Pages/projects.html">< // Projects</a></li>
+                                            <li><a href="../Pages/mprojects.html">< // Main Projects</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="../Pages/updates.html">// Updates</a></li>
+                                    <li><a href="../Pages/socials.html">// Socials</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="reactive" align="center">
+            <img src="https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ" width="700" height="150"></img>
+        </div>
+        <script>
+            document.body.className = 'fade';
+            document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function() {
+                document.body.className = '';
+            }, 230);
+            });
+        </script>
+        <script src="../Resources/prism.js"></script>
+        <script>
+            var isDark = localStorage.getItem("isDark");
+
+            if (isDark == "true") {
+                document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+            } else {
+                document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillahl.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+                document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+            }
+
+            function toggle() {
+                isDark = localStorage.getItem("isDark");
+                if (isDark == "false") {
+                    document.getElementById("theme").setAttribute("href", "../Resources/dark.css");
+                    document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillah.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+                    localStorage.setItem("isDark", true);
+                } else if (isDark == "true") {
+                    document.getElementById("reactive").innerHTML = "<img src=\"https://raw.githubusercontent.com/Raiyaxi-Ziaoi/Resources/main/bismillahl.png?token=GHSAT0AAAAAABXCMKG533RUMQ4V6F5TPBJWYYH3CRQ\" width=\"700\" height=\"150\"></img>";
+                    document.getElementById("theme").setAttribute("href", "../Resources/light.css");
+                    localStorage.setItem("isDark", false);
+                }
+            }
+        </script>
+        <button style="position:fixed;bottom:92%;right:5px;margin:0;padding:5px 3px;" onclick="toggle()">
+            <b>Light / Dark</b>
+        </button>
+        <hr>
+        <br/>
+
+        <div class="text" style="font-size: 115%;">
+            <div class="fade1">
+                &lt;usr&gt; is another social media application, geared towards messaging. It's like Wahda<br/><br/>
+            </div>
+            <div class="fade2">
+                except it took 48 hours straight to make with its own custom made database, client, server and<br/><br/>
+            </div>
+            <div class="fade3">
+                query langauge. It was a terrible idea but it worked and it was definitely an experience -<br/><br/>
+            </div>
+            <div class="fade5">
+                that being a good experience or not is up to you, the reader. As far as I can see, it's<br/><br/>
+            </div>
+            <div class="fade7">
+                another thing that I will create with passion, add to my portfolio, forget and repeat.<br/><br/>
+            </div>
+            <div class="fade7">
+                Ah, the joys of programming.<br/>
+            </div>
+        </div>
+        <br/>
+        <hr>
+    </body>
+
+</html>
